@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './CommunityPlusLandingPage.css';
+import '../src/CommunityPlusLandingPage.css';
 
 function CommunityPlusLandingPage() {
   return (

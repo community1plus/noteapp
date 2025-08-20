@@ -1,0 +1,53 @@
+/* Layout */
+.page-container {
+  min-height: 100vh;
+  background-color: white;
+  color: #1f2937; /* gray-900 */
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #dc2626; /* red-600 */
+}
+
+/* Navigation */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.nav-links li {
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-links li:hover {
+  color: #dc2626; /* red-600 on hover */
+}
+
+/* Main Content */
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.main h1 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #6b7280; /* gray-500 */
+}

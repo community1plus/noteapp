@@ -1,5 +1,5 @@
 import React from 'react';
-import '/SignInRegister.css'; // External CSS for cleaner JSX
+import '../src/SignInRegister.css'; // External CSS for cleaner JSX
 
 const providers = [
   {
