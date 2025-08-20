@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import CommunityPlusLandingPage from './CommunityPlusLandingPage';
 import CommunityPlusRegistrationPage from './CommunityPlusRegistrationPage';
-import CommunityPlusHomePage from './components/CommunityPlusHomePage';
+import CommunityPlusHomePage from './CommunityPlusHomePage';
 
 function App() {
   return (
