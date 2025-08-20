@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import CommunityPlusLandingPage from '../../notepad/src/components/CommunityPlusLandingPage';
-import CommunityPlusRegistrationPage from '../../notepad/src/components/CommunityPlusRegistrationPage';
+import CommunityPlusLandingPage from './CommunityPlusLandingPage';
+import CommunityPlusRegistrationPage from './CommunityPlusRegistrationPage';
 
 function App() {
   return (
