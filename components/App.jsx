@@ -10,6 +10,7 @@ function App() {
       <Route path="/" element={<CommunityPlusLandingPage />} />
       <Route path="/register" element={<CommunityPlusRegistrationPage />} />
       <Route path="/home" element={<CommunityPlusHomePage />} />
+      <Route path="*" element={<CommunityPlusLandingPage />} />
     </Routes>
   );
 }
