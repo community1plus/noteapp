@@ -1,4 +1,3 @@
-import React from 'react';
 import './SignInRegister.css';
 
 const providers = [
