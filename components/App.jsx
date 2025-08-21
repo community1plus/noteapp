@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CommunityPlusLandingPage from './CommunityPlusLandingPage';
 import CommunityPlusRegistrationPage from './CommunityPlusRegistrationPage';
 import CommunityPlusHomePage from './CommunityPlusHomePage';
