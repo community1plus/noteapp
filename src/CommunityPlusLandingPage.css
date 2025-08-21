@@ -38,11 +38,11 @@
 }
 
 .footer-left {
-  justify-content: left;
+  justify-content: flex-start;
 }
 
 .footer-center {
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .footer-right {
