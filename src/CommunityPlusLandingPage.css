@@ -46,6 +46,12 @@
   justify-content: flex-end;
 }
 
+.footer-right a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #666;
+}
+
 .footer-right a:hover {
   text-decoration: underline;
 }
