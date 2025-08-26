@@ -1,18 +1,23 @@
-import { defineAuth } from "@aws-amplify/backend";
+import { defineAuth } from "@aws-amplify/backend-auth";
 
 export const auth = defineAuth({
   loginWith: {
-    // Default login: guest
-    guest: true, // <- allows anonymous sessions
-
-    // Federated providers
-    oauth: true,
-    providers: [
-      "Google",
-      "Facebook",
-      "LoginWithAmazon",
-      "SignInWithApple",
-      "Twitter"
-    ],
+    email: true,
+    externalProviders: {
+      amazon: true,
+      apple: true,
+      facebook: true,
+      google: true,
+      twitter: true,
+    },
   },
+  identityPool: {
+    // Enables guest access
+    unauthenticatedLogin: true,
+  },
+  multifactor: {
+    mode: "OPTIONAL",
+    sms: true,
+  },
+  accountRecovery: "EMAIL_ONLY",
 });
