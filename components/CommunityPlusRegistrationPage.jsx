@@ -1,54 +1,88 @@
-import React from 'react';
-import '../src/SignInRegister.css'; // External CSS for cleaner JSX
+import React from "react";
+import "../src/SignInRegister.css"; // External CSS
+import { signInWithRedirect, signInAnonymously } from "aws-amplify/auth";
 
 const providers = [
   {
-    name: 'Facebook',
-    icon: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png',
+    name: "Facebook",
+    id: "facebook",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png",
   },
   {
-    name: 'Google',
-    icon: 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Google_Favicon_2025.svg',
+    name: "Google",
+    id: "google",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Google_Favicon_2025.svg",
   },
   {
-    name: 'Apple',
-    icon: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg',
+    name: "Apple",
+    id: "apple",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
   },
   {
-    name: 'Amazon',
-    icon: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg',
+    name: "Amazon",
+    id: "amazon",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg",
   },
   {
-    name: 'Twitter',
-    icon: 'https://upload.wikimedia.org/wikipedia/commons/5/59/Twitter%E3%81%AE%E3%83%AD%E3%82%B4.jpg',
+    name: "Twitter",
+    id: "twitter",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/5/59/Twitter%E3%81%AE%E3%83%AD%E3%82%B4.jpg",
   },
 ];
 
 const SignInRegister = () => {
+  // Social sign-in (redirects to provider login page)
+  const handleProviderLogin = async (providerId) => {
+    try {
+      await signInWithRedirect({ provider: providerId });
+    } catch (err) {
+      console.error("Error signing in with provider:", providerId, err);
+    }
+  };
+
+  // Guest login
+  const handleGuestLogin = async () => {
+    try {
+      const user = await signInAnonymously();
+      console.log("Signed in as guest:", user);
+    } catch (err) {
+      console.error("Error with guest login:", err);
+    }
+  };
+
+  // Email signup (you can replace with Amplify email/password auth later)
   const handleEmailSignUp = (e) => {
     e.preventDefault();
-    alert('Signed up with email!');
+    alert("Signed up with email!");
   };
 
   return (
     <div className="container">
       {providers.map((provider) => (
-        <button className="btn" key={provider.name}>
+        <button
+          className="btn"
+          key={provider.name}
+          onClick={() => handleProviderLogin(provider.id)}
+        >
           <img src={provider.icon} alt={provider.name} />
           Continue with {provider.name}
         </button>
       ))}
 
-      <div className="divider"><span>or</span></div>
+      <button className="btn guest-btn" onClick={handleGuestLogin}>
+        Continue as Guest
+      </button>
+
+      <div className="divider">
+        <span>or</span>
+      </div>
 
       <form onSubmit={handleEmailSignUp}>
         <input type="email" placeholder="Enter your email" required />
         <button type="submit" className="signup-btn">Sign up</button>
       </form>
 
-      <footer>
-        &copy; 2025 Commune+. All rights reserved.
-      </footer>
+      <footer>&copy; 2025 Community+. All rights reserved.</footer>
     </div>
   );
 };
