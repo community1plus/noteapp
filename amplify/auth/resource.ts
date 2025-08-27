@@ -41,6 +41,16 @@ export const auth = defineAuth({
         clientId: FACEBOOK_CLIENT_ID,
         clientSecret: FACEBOOK_CLIENT_SECRET,
       },
+      signInWithApple: {
+        clientId: secret('SIWA_CLIENT_ID'),
+        keyId: secret('SIWA_KEY_ID'),
+        privateKey: secret('SIWA_PRIVATE_KEY'),
+        teamId: secret('SIWA_TEAM_ID')
+      },
+      loginWithAmazon: {
+        clientId: secret('LOGINWITHAMAZON_CLIENT_ID'),
+        clientSecret: secret('LOGINWITHAMAZON_CLIENT_SECRET')
+      },
     },
   },
   
