@@ -22,45 +22,27 @@ const TWITTER_CLIENT_SECRET = secret("TWITTER_CLIENT_SECRET");
 export const auth = defineAuth({
   loginWith: {
     email: true,   // allow email sign-up/login
-    externalProviders: [
-      {
-        provider: "google",
+    externalProviders: {
+      callbackUrls: [
+        "http://localhost:3000/",
+        // Add your production callback URLs here
+      ],
+      logoutUrls: [
+        "http://localhost:3000/",
+        // Add your production logout URLs here
+      ],
+      google: {
         clientId: GOOGLE_CLIENT_ID,
         clientSecret: GOOGLE_CLIENT_SECRET,
       },
-      {
-        provider: "facebook",
+      facebook: {
         clientId: FACEBOOK_CLIENT_ID,
         clientSecret: FACEBOOK_CLIENT_SECRET,
       },
-      {
-        provider: "apple",
-        clientId: APPLE_CLIENT_ID,
-        teamId: APPLE_TEAM_ID,
-        keyId: APPLE_KEY_ID,
-        privateKey: APPLE_PRIVATE_KEY,
-      },
-      {
-        provider: "amazon",
-        clientId: AMAZON_CLIENT_ID,
-        clientSecret: AMAZON_CLIENT_SECRET,
-      },
-      {
-        provider: "twitter",
-        clientId: TWITTER_CLIENT_ID,
-        clientSecret: TWITTER_CLIENT_SECRET,
-      },
-    ],
+    },
   },
-  allowGuestAccess: true,  // ✅ anonymous guest login enabled
-  multifactor: "OPTIONAL", // optional MFA
-  passwordPolicy: {
-    minLength: 8,
-    requireLowercase: true,
-    requireUppercase: true,
-    requireNumbers: true,
-    requireSpecialCharacters: true,
-  },
+  // allowGuestAccess: true,  // anonymous guest login is not supported here
+  // multifactor: MFA.OPTIONAL, // optional MFA
 });
 // Note: To use social providers, you must configure them in the respective
 // developer consoles (Google, Facebook, Apple, Amazon, Twitter) and set the
