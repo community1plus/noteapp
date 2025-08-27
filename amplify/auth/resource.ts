@@ -26,11 +26,12 @@ export const auth = defineAuth({
     externalProviders: {
       callbackUrls: [
         "http://localhost:3000/",
+        "https://main.dmuplbxdc2r3b.amplifyapp.com"
         // Add your production callback URLs here
       ],
       logoutUrls: [
         "http://localhost:3000/",
-        // Add your production logout URLs here
+        "https://main.dmuplbxdc2r3b.amplifyapp.com"
       ],
       google: {
         clientId: GOOGLE_CLIENT_ID,
