@@ -1,7 +1,8 @@
+import React from "react";
 import { defineAuth } from "@aws-amplify/backend-auth";
 import { secret } from "@aws-amplify/backend";
 
-// Define secrets (these will be stored in Amplify Console → Environment variables)
+// Define secrets - - Stored in Amplify Console → Environment variables)
 const GOOGLE_CLIENT_ID = secret("GOOGLE_CLIENT_ID");
 const GOOGLE_CLIENT_SECRET = secret("GOOGLE_CLIENT_SECRET");
 
@@ -41,8 +42,7 @@ export const auth = defineAuth({
       },
     },
   },
-  // allowGuestAccess: true,  // anonymous guest login is not supported here
-  // multifactor: MFA.OPTIONAL, // optional MFA
+  
 });
 // Note: To use social providers, you must configure them in the respective
 // developer consoles (Google, Facebook, Apple, Amazon, Twitter) and set the

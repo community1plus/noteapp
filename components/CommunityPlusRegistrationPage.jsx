@@ -1,6 +1,6 @@
 import React from "react";
 import "../src/SignInRegister.css"; // External CSS
-import { signInWithRedirect, signInAnonymously } from "aws-amplify/auth";
+import { signInWithRedirect } from "aws-amplify/auth";
 
 const providers = [
   {
