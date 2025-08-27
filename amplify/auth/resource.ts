@@ -36,10 +36,12 @@ export const auth = defineAuth({
       google: {
         clientId: GOOGLE_CLIENT_ID,
         clientSecret: GOOGLE_CLIENT_SECRET,
+        scopes: ["openid", "email", "profile"],
       },
       facebook: {
         clientId: FACEBOOK_CLIENT_ID,
         clientSecret: FACEBOOK_CLIENT_SECRET,
+        
       },
       signInWithApple: {
         clientId: secret('SIWA_CLIENT_ID'),
