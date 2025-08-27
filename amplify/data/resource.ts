@@ -6,9 +6,15 @@ export const auth = defineAuth({
     externalProviders: {
       amazon: true,
       apple: true,
-      facebook: true,
-      google: true,
-      twitter: true,
+      facebook: {
+        clientId: '773397878670957',
+        clientSecret: 'a5f6a7a531b2e94825798a3ba05a3011',
+      },
+      google: {
+        clientId: '683031353967-',
+        clientSecret: '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',
+      },
+      //twitter: true,
     },
   },
   identityPool: {
