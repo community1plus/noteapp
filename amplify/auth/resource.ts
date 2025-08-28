@@ -26,12 +26,12 @@ export const auth = defineAuth({
       google: {
         clientId: GOOGLE_CLIENT_ID,
         clientSecret: GOOGLE_CLIENT_SECRET,
-        scopes: ["openid", "email", "profile"],
+        scopes: ["profile"],
       },
       facebook: {
         clientId: FACEBOOK_CLIENT_ID,
         clientSecret: FACEBOOK_CLIENT_SECRET,
-        scopes: ["public_profile", "email"],
+        scopes: ["public_profile"],
       },
       
     }, 
