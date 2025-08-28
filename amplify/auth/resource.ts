@@ -10,8 +10,8 @@ export const auth = defineAuth({
         clientSecret: secret("GOOGLE_CLIENT_SECRET"),
       },
       facebook: {
-        clientId: secret("FACEBOOK_APP_ID"),
-        clientSecret: secret("FACEBOOK_APP_SECRET"),
+        clientId: secret("FACEBOOK_CLIENT_ID"),
+        clientSecret: secret("FACEBOOK_CLIENT_SECRET"),
       },
       callbackUrls: [
         "http://localhost:3000/",
