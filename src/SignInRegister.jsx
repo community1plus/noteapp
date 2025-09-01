@@ -1,58 +1,14 @@
-import './SignInRegister.css';
+import React from "react";
+import "../src/SignInRegister.css"; // External CSS
+import { signInWithRedirect } from "aws-amplify/auth";
+import { defineAuth } from "@aws-amplify/backend"
 
-const providers = [
-  {
-    name: 'Facebook',
-    icon: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png',
+/**
+ * Define and configure your auth resource
+ * @see https://docs.amplify.aws/gen2/build-a-backend/auth
+ */
+export const auth = defineAuth({
+  loginWith: {
+    email: true,
   },
-  {
-    name: 'Google',
-    icon: 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Google_Favicon_2025.svg',
-  },
-  {
-    name: 'Apple',
-    icon: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg',
-  },
-  {
-    name: 'Amazon',
-    icon: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg',
-  },
-  {
-    name: 'Twitter',
-    icon: 'https://upload.wikimedia.org/wikipedia/commons/5/59/Twitter%E3%81%AE%E3%83%AD%E3%82%B4.jpg',
-  },
-];
-
-const SignInRegister = () => {
-  const handleEmailSignUp = (e) => {
-    e.preventDefault();
-    alert('Signed up with email!');
-  };
-
-  return (
-    <div className="floating-wrapper">
-      <div className="logo">COMMUNITY+</div>
-      <div className="container">
-        {providers.map((provider) => (
-          <button className="btn" key={provider.name}>
-            <img src={provider.icon} alt={provider.name} />
-            Continue with {provider.name}
-          </button>
-        ))}
-
-        <div className="divider"><span>or</span></div>
-
-        <form onSubmit={handleEmailSignUp}>
-          <input type="email" placeholder="Enter your email" required />
-          <button type="submit" className="signup-btn">Sign up</button>
-        </form>
-
-        <footer>
-          &copy; By continuing, you agree to our Terms of Use and Privacy Policy.
-        </footer>
-      </div>
-    </div>
-  );
-};
-
-export default SignInRegister;
+});
