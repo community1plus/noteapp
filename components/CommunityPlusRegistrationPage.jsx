@@ -2,6 +2,7 @@ import React from "react";
 import "../src/SignInRegister.css"; // External CSS
 import { signInWithRedirect } from "aws-amplify/auth";
 
+
 const SignInRegister = () => {
   // Social sign-in (redirects to provider login page)
   const handleProviderLogin = async (providerId) => {
@@ -29,33 +30,6 @@ const SignInRegister = () => {
   };
 
   return (
-    <div className="container">
-      {providers.map((provider) => (
-        <button
-          className="btn"
-          key={provider.name}
-          onClick={() => handleProviderLogin(provider.id)}
-        >
-          <img src={provider.icon} alt={provider.name} />
-          Continue with {provider.name}
-        </button>
-      ))}
-
-      <button className="btn guest-btn" onClick={handleGuestLogin}>
-        Continue as Guest
-      </button>
-
-      <div className="divider">
-        <span>or</span>
-      </div>
-
-      <form onSubmit={handleEmailSignUp}>
-        <input type="email" placeholder="Enter your email" required />
-        <button type="submit" className="signup-btn">Sign up</button>
-      </form>
-
-      <footer>&copy; 2025 Community+. All rights reserved.</footer>
-    </div>
   );
 };
 
