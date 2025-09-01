@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { withAuthenticator } from "@aws-amplify/ui-react";
-import CommunityPage from "./components/CommunityPage"; // protected page
+import CommunityPlusLandingPage from "./CommunityPlusLandingPage"; // protected page
 import SignInRegister from "../src/SignInRegister";
 
 function App({ signOut, user }) {
