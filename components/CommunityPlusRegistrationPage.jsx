@@ -28,9 +28,6 @@ const SignInRegister = () => {
     e.preventDefault();
     alert("Signed up with email!");
   };
-
-  return (
-  );
 };
 
 export default SignInRegister;
