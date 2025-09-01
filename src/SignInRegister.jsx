@@ -1,14 +1,18 @@
-import React from "react";
-import "../src/SignInRegister.css"; // External CSS
-import { signInWithRedirect } from "aws-amplify/auth";
-import { defineAuth } from "@aws-amplify/backend"
+import { Amplify } from 'aws-amplify';
 
-/**
- * Define and configure your auth resource
- * @see https://docs.amplify.aws/gen2/build-a-backend/auth
- */
-export const auth = defineAuth({
-  loginWith: {
-    email: true,
-  },
-});
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+
+import awsExports from './aws-exports';
+Amplify.configure(awsExports);
+
+function App({ signOut, user }) {
+  return (
+    <>
+      <h1>Hello {user.username}</h1>
+      <button onClick={signOut}>Sign out</button>
+    </>
+  );
+}
+
+export default withAuthenticator(App);
