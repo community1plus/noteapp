@@ -2,34 +2,6 @@ import React from "react";
 import "../src/SignInRegister.css"; // External CSS
 import { signInWithRedirect } from "aws-amplify/auth";
 
-const providers = [
-  {
-    name: "Facebook",
-    id: "facebook",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png",
-  },
-  {
-    name: "Google",
-    id: "google",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Google_Favicon_2025.svg",
-  },
-  {
-    name: "Apple",
-    id: "apple",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
-  },
-  {
-    name: "Amazon",
-    id: "amazon",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg",
-  },
-  {
-    name: "Twitter",
-    id: "twitter",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/5/59/Twitter%E3%81%AE%E3%83%AD%E3%82%B4.jpg",
-  },
-];
-
 const SignInRegister = () => {
   // Social sign-in (redirects to provider login page)
   const handleProviderLogin = async (providerId) => {
