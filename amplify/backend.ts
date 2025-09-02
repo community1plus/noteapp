@@ -1,4 +1,4 @@
-import { defineBackend, defineStorage, defineFunction, defineApi } from "@aws-amplify/backend";
+import { defineBackend, defineStorage, defineFunction, defineRestApi } from "@aws-amplify/backend";
 
 // ---------- Storage ----------
 const storage = defineStorage({
