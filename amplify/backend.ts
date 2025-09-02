@@ -5,8 +5,6 @@ import { defineApi } from "@aws-amplify/backend-api";
 import { auth } from './auth/resource';
 import { data } from './data/resource';
 
-import { defineBackend } from "@aws-amplify/backend";
-
 const backend = defineBackend({
   api: {
     videoApi: {
