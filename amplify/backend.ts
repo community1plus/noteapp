@@ -1,7 +1,6 @@
-import { defineBackend } from '@aws-amplify/backend';
+import { defineBackend, defineApi } from '@aws-amplify/backend';
 import { defineStorage } from "@aws-amplify/backend-storage";
 import { defineFunction } from "@aws-amplify/backend-function";
-import { defineApi } from "@aws-amplify/backend-api";
 import { auth } from './auth/resource';
 import { data } from './data/resource';
 
