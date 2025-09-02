@@ -22,83 +22,46 @@ const backend = defineBackend({
 const storage = defineStorage({
   name: "videoStorage",
   access: (allow) => ({
-    "video-raw": [
-      allow.guest.to(["read"]),
-      allow.authenticated.to(["read","write"]), // uploads via presigned URL
-    ],
-    "video-output": [
-      allow.guest.to(["read"]),                 // HLS playback public via CF
-      allow.authenticated.to(["read"])
-    ],
-  }),
-  // Helpful CORS for PUT from browser
-  cors: {
-    "video-raw": {
-      allowedOrigins: ["*"],
-      allowedMethods: ["GET","PUT","HEAD","OPTIONS"],
-      allowedHeaders: ["*"],
-      exposeHeaders: ["ETag"]
-    },
-    "video-output": {
-      allowedOrigins: ["*"],
-      allowedMethods: ["GET","HEAD","OPTIONS"],
-      allowedHeaders: ["*"],
-    }
-  }
+    "video-raw": [allow.authenticated.to(["read", "write"])],
+    "video-output": [allow.guest.to(["read"]), allow.authenticated.to(["read"])]
+  })
 });
-
+  
 // Lambda: presigned URL
 const getUploadUrlFn = defineFunction({
-  name: "getUploadUrl",
   entry: "./functions/get-upload-url/handler.ts",
   environment: {
-    RAW_BUCKET: storage.resources["video-raw"].name
+    RAW_BUCKET: "video-raw"
   },
-  // grant put access for signed URLs (the URL itself authorizes, but SDK needs head/list sometimes)
-  permissions: [storage.resources["video-raw"].grantReadWrite()],
 });
-
+ 
 // Lambda: start MediaConvert on S3 create
 const startTranscodeFn = defineFunction({
-  name: "startTranscode",
   entry: "./functions/start-transcode/handler.ts",
   environment: {
-    RAW_BUCKET: storage.resources["video-raw"].name,
-    OUTPUT_BUCKET: storage.resources["video-output"].name,
-    // Fill these in after you create MediaConvert role/endpoints
-    MEDIACONVERT_ROLE_ARN: process.env.MEDIACONVERT_ROLE_ARN ?? "",
-    MEDIACONVERT_ENDPOINT: process.env.MEDIACONVERT_ENDPOINT ?? "",
+    RAW_BUCKET: "video-raw",
+    OUTPUT_BUCKET: "video-output",
+    MEDIACONVERT_ROLE_ARN: "",     // fill later
+    MEDIACONVERT_ENDPOINT: ""      // fill later
   },
-  permissions: [
-    storage.resources["video-raw"].grantRead(),
-    storage.resources["video-output"].grantReadWrite(),
-    // inline IAM for MediaConvert
-    {
-      actions: [
-        "mediaconvert:CreateJob",
-        "mediaconvert:DescribeEndpoints",
-        "iam:PassRole"
-      ],
-      resources: ["*"]
-    }
+  access: (allow) => [
+    allow.fromStorage("video-raw").to(["read"]),
+    allow.fromStorage("video-output").to(["read", "write"])
   ],
-  // Wire S3 -> Lambda trigger
   s3Triggers: [
     {
-      bucket: storage.resources["video-raw"],
-      events: ["s3:ObjectCreated:*"],
-      filter: { prefix: "uploads/", suffix: "" }
+      eventSource: "video-raw",
+      events: ["s3:ObjectCreated:*"]
     }
   ]
 });
 
 // API routes (REST) for frontend to request presigned URL
+
 const api = defineApi({
   name: "videoApi",
   routes: {
-    "POST /generate-upload-url": {
-      function: getUploadUrlFn
-    }
+    "POST /generate-upload-url": getUploadUrlFn
   }
 });
 
