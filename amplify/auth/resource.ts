@@ -17,12 +17,12 @@ export const auth = defineAuth({
       },
       callbackUrls: [
         "http://localhost:3000/",
-        "https://main.dmuplbxdc2r3b.amplifyapp.com"
+        "https://main.dmuplbxdc2r3b.amplifyapp.com/CommunityPlusHomePage"
         // Add your production callback URLs here
       ],
       logoutUrls: [
         "http://localhost:3000/",
-        "https://main.dmuplbxdc2r3b.amplifyapp.com"
+        "https://main.dmuplbxdc2r3b.amplifyapp.com/CommunityPlusHomePage"
         // Add your production logout URLs here
       ],
     },

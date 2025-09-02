@@ -1,0 +1,33 @@
+import React, { useState } from 'react';
+
+export default function VideoUpload({ api }) {
+  const [file, setFile] = useState();
+  const [progress, setProgress] = useState(0);
+
+  const handleFile = (e) => setFile(e.target.files[0]);
+
+  const upload = async () => {
+    const { uploadUrl, jobData } = await api.post('/generate-upload-url', {
+      filename: file.name,
+      contentType: file.type
+    });
+
+    await fetch(uploadUrl, {
+      method: 'PUT',
+      headers: {'Content-Type': file.type},
+      body: file,
+      onUploadProgress: (e) => setProgress(Math.round(e.loaded / e.total * 100))
+    });
+
+    await api.post('/start-transcode', { key: jobData.key });
+    alert('Upload complete — processing started.');
+  }
+
+  return (
+    <div>
+      <input type="file" accept="video/*" onChange={handleFile} />
+      {file && <button onClick={upload}>Upload</button>}
+      {progress > 0 && <div>Upload Progress: {progress}%</div>}
+    </div>
+  );
+}

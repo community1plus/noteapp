@@ -12,6 +12,7 @@ function App({ signOut, user }) {
       <Routes>
         <Route path="/" element={<h1>Landing Page</h1>} />
         <Route path="/login" element={<SignInRegister user={user} signOut={signOut} />} />
+        <Route path="/home" element={<CommunityPlusHomePage />} /> 
       </Routes>
     </Router>
   );
