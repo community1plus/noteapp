@@ -1,47 +1,49 @@
-import { defineBackend, defineApi } from '@aws-amplify/backend';
-import { defineStorage } from "@aws-amplify/backend-storage";
-import { defineFunction } from "@aws-amplify/backend-function";
-import { auth } from './auth/resource';
-import { data } from './data/resource';
+import { defineBackend, defineStorage, defineFunction, defineApi } from "@aws-amplify/backend";
 
-const backend = defineBackend({
-  api: {
-    videoApi: {
-      // REST route example
-      routes: {
-        "POST /generate-upload-url": {
-          function: "getUploadUrl"
-        }
-      }
+// ---------- Storage ----------
+const storage = defineStorage({
+  name: "videoStorage",
+  access: (allow) => ({
+    "video-raw": [
+      allow.authenticated.to(["read", "write"]) // signed-in users upload
+    ],
+    "video-output": [
+      allow.guest.to(["read"]),                // playback public
+      allow.authenticated.to(["read"])
+    ]
+  }),
+  cors: {
+    "video-raw": {
+      allowedOrigins: ["*"],
+      allowedMethods: ["GET", "PUT", "HEAD", "OPTIONS"],
+      allowedHeaders: ["*"]
+    },
+    "video-output": {
+      allowedOrigins: ["*"],
+      allowedMethods: ["GET", "HEAD", "OPTIONS"],
+      allowedHeaders: ["*"]
     }
   }
 });
 
-// Buckets
-const storage = defineStorage({
-  name: "videoStorage",
-  access: (allow) => ({
-    "video-raw": [allow.authenticated.to(["read", "write"])],
-    "video-output": [allow.guest.to(["read"]), allow.authenticated.to(["read"])]
-  })
-});
-  
-// Lambda: presigned URL
+// ---------- Functions ----------
 const getUploadUrlFn = defineFunction({
   entry: "./functions/get-upload-url/handler.ts",
   environment: {
     RAW_BUCKET: "video-raw"
   },
+  access: (allow) => [
+    allow.fromStorage("video-raw").to(["read", "write"])
+  ]
 });
- 
-// Lambda: start MediaConvert on S3 create
+
 const startTranscodeFn = defineFunction({
   entry: "./functions/start-transcode/handler.ts",
   environment: {
     RAW_BUCKET: "video-raw",
     OUTPUT_BUCKET: "video-output",
-    MEDIACONVERT_ROLE_ARN: "",     // fill later
-    MEDIACONVERT_ENDPOINT: ""      // fill later
+    MEDIACONVERT_ROLE_ARN: "",     // <-- fill with your IAM role ARN
+    MEDIACONVERT_ENDPOINT: ""      // <-- fill with MediaConvert endpoint
   },
   access: (allow) => [
     allow.fromStorage("video-raw").to(["read"]),
@@ -55,8 +57,7 @@ const startTranscodeFn = defineFunction({
   ]
 });
 
-// API routes (REST) for frontend to request presigned URL
-
+// ---------- API ----------
 const api = defineApi({
   name: "videoApi",
   routes: {
@@ -64,5 +65,15 @@ const api = defineApi({
   }
 });
 
-export default backend;
+// ---------- Export backend ----------
+export default defineBackend({
+  storage,
+  functions: {
+    getUploadUrl: getUploadUrlFn,
+    startTranscode: startTranscodeFn
+  },
+  api
+});
+
+
 
