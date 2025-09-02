@@ -5,7 +5,20 @@ import { defineApi } from "@aws-amplify/backend-api";
 import { auth } from './auth/resource';
 import { data } from './data/resource';
 
-const backend = defineBackend({});
+import { defineBackend } from "@aws-amplify/backend";
+
+const backend = defineBackend({
+  api: {
+    videoApi: {
+      // REST route example
+      routes: {
+        "POST /generate-upload-url": {
+          function: "getUploadUrl"
+        }
+      }
+    }
+  }
+});
 
 // Buckets
 const storage = defineStorage({
