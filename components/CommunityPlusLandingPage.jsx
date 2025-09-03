@@ -5,7 +5,7 @@ function CommunityPlusLandingPage() {
   return (
     <div className="landing-container">
       <div className="main-content">
-        <Link to="/login" className="title-link">
+        <Link to="/home" className="title-link">
           <div className="title">COMMUNITY+</div>
         </Link>
       </div>
