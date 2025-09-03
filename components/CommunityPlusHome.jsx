@@ -1,5 +1,4 @@
-import React from "react";
-import "./CommunityPlusHome.css";
+import "../src/CommunityPlusHome.css";
 
 export default function CommunityPlusHome({ location = "St Kilda, VIC" }) {
   return (
