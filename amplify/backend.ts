@@ -1,19 +1,28 @@
 import { defineBackend, defineFunction, defineStorage } from "@aws-amplify/backend";
 
-// ---------- Storage ----------
-const storage = defineStorage({
-  name: "videoStorage",
-  partitions: ["video-raw", "video-output"], // two logical buckets
+// ---------- Storage (two buckets) ----------
+const rawStorage = defineStorage({
+  name: "videoRaw",
+  access: (allow) => ({
+    "uploads/*": [allow.authenticated.to(["read", "write"])]
+  })
+});
+
+const outputStorage = defineStorage({
+  name: "videoOutput",
+  access: (allow) => ({
+    "public/*": [allow.guest.to(["read"]), allow.authenticated.to(["read"])]
+  })
 });
 
 // ---------- Functions ----------
 
-// Upload URL Lambda (exposed as REST endpoint)
+// Upload URL Lambda (REST endpoint)
 const getUploadUrl = defineFunction({
   name: "getUploadUrl",
   entry: "./functions/get-upload-url/handler.ts",
   environment: {
-    RAW_BUCKET: "video-raw"
+    RAW_BUCKET: rawStorage.name
   },
   api: {
     path: "/generate-upload-url",
@@ -21,27 +30,29 @@ const getUploadUrl = defineFunction({
   }
 });
 
-// Start transcode Lambda (triggered by S3 event)
+// Start transcode Lambda (triggered by S3)
 const startTranscode = defineFunction({
   name: "startTranscode",
   entry: "./functions/start-transcode/handler.ts",
   environment: {
-    RAW_BUCKET: "video-raw",
-    OUTPUT_BUCKET: "video-output",
-    MEDIACONVERT_ROLE_ARN: "",     // <-- set in Amplify console or env
-    MEDIACONVERT_ENDPOINT: ""      // <-- set in Amplify console or env
+    RAW_BUCKET: rawStorage.name,
+    OUTPUT_BUCKET: outputStorage.name,
+    MEDIACONVERT_ROLE_ARN: "",     // fill in
+    MEDIACONVERT_ENDPOINT: ""      // fill in
   },
   s3Events: [
     {
-      bucket: "video-raw",
+      bucket: rawStorage.name,
       events: ["s3:ObjectCreated:*"]
     }
   ]
 });
 
-// ---------- Export everything ----------
+// ---------- Export ----------
 export default defineBackend({
-  storage,
+  storage: [rawStorage, outputStorage],
   getUploadUrl,
   startTranscode
 });
+
+
