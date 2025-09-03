@@ -5,7 +5,7 @@ export default function CommunityPlusLandingPage() {
 
   const handleCommunityClick = () => {
     // Redirect to /home → Authenticator will handle login if needed
-    navigate("/");
+    navigate("/home");
   };
 
   return (
