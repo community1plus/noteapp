@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, BrowserRouter } from "react-router-dom";
 import { withAuthenticator } from "@aws-amplify/ui-react";
 import CommunityPlusLandingPage from "./CommunityPlusLandingPage"; // protected page
 import CommunityPlusHome from "./CommunityPlusHome"; // protected page
@@ -6,7 +6,7 @@ import SignInRegister from "../src/SignInRegister";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         {/* Public landing page */}
         <Route path="/" element={<CommunityPlusLandingPage />} />
@@ -23,7 +23,7 @@ function App() {
           }
         />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 
