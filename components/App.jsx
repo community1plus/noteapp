@@ -7,9 +7,6 @@ import SignInRegister from "../src/SignInRegister";
 function App({ signOut, user }) {
   return (
     <Router>
-      <nav>
-        <Link to="/home">COMMUNITY</Link>
-      </nav>
       <Routes>
         <Route path="/" element={<CommunityPlusLandingPage />} /> 
         <Route path="/home" element={<CommunityPlusHome />} /> 
