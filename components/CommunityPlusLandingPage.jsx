@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 export default function CommunityPlusLandingPage() {
   const navigate = useNavigate();
 
