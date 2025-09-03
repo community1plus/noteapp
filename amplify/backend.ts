@@ -4,5 +4,5 @@ import { storage } from './auth/resource';
 
 defineBackend({
   auth,
-  storage,
+  storage
 });

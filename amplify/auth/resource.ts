@@ -3,7 +3,7 @@ import { secret } from "@aws-amplify/backend";
 import { defineStorage } from '@aws-amplify/backend';
 
 export const storage = defineStorage({
-  name: "VideoStorage",
+  name: "videoStorage",
 });
 
 export const auth = defineAuth({

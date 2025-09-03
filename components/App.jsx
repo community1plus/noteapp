@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { withAuthenticator } from "@aws-amplify/ui-react";
 import CommunityPlusLandingPage from "./CommunityPlusLandingPage"; // protected page
-import CommunityPlusHome from ./CommunityPlusHome;
+import CommunityPlusHome from CommunityPlusHome;
 import SignInRegister from "../src/SignInRegister";
 
 function App({ signOut, user }) {
@@ -13,7 +13,7 @@ function App({ signOut, user }) {
       <Routes>
         <Route path="/" element={<h1>Landing Page</h1>} />
         <Route path="/login" element={<SignInRegister user={user} signOut={signOut} />} />
-        <Route path="/home" element={<CommunityPlusHomePage />} /> 
+        <Route path="/home" element={<CommunityPlusHome />} /> 
       </Routes>
     </Router>
   );
