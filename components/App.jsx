@@ -3,6 +3,7 @@ import { withAuthenticator } from "@aws-amplify/ui-react";
 import CommunityPlusLandingPage from "./CommunityPlusLandingPage"; // protected page
 import CommunityPlusHome from "./CommunityPlusHome"; // protected page
 import SignInRegister from "../src/SignInRegister";
+import { Authenticator } from "@aws-amplify/ui-react";
 
 function App() {
   return (
@@ -12,11 +13,11 @@ function App() {
         <Route
           path="/home"
           element={
-            <withAuthenticator>
+            <Authenticator>
               {({ signOut, user }) => (
-                <SignInRegister user={user} signOut={signOut} />
+                <CommunityPlusHome user={user} signOut={signOut} />
               )}
-            </withAuthenticator>
+            </Authenticator>
           }
         />
       </Routes>
