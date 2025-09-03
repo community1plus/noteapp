@@ -15,7 +15,7 @@ export default function CommunityPlusLandingPage() {
         onClick={handleCommunityClick}
         style={{ padding: "10px 20px", fontSize: "1.2rem" }}
       >
-        COMMUNITY
+        COMMUNITY+
       </button>
     </div>
   );
