@@ -1,26 +1,20 @@
-import { Link } from 'react-router-dom';
-import '../src/CommunityPlusLandingPage.css';
+export default function CommunityPlusLandingPage() {
+  const navigate = useNavigate();
 
-function CommunityPlusLandingPage() {
+  const handleCommunityClick = () => {
+    // Redirect to /home → Authenticator will handle login if needed
+    navigate("/home");
+  };
+
   return (
-    <div className="landing-container">
-      <div className="main-content">
-        <Link to="/" className="title-link">
-          <div className="title">COMMUNITY+</div>
-        </Link>
-      </div>
-
-      <footer className="footer">
-        <div className="footer-left">How Commune+ Works</div>
-        <div className="footer-center">© 2025 COMMUNITY+. All rights reserved.</div>
-        <div className="footer-right">
-          <a href="#">Terms</a>
-          <a href="#">Security</a>
-          <a href="#">Privacy</a>
-        </div>
-      </footer>
+    <div style={{ textAlign: "center", marginTop: "20vh" }}>
+      <h1>Welcome to COMMUNITY+</h1>
+      <button
+        onClick={handleCommunityClick}
+        style={{ padding: "10px 20px", fontSize: "1.2rem" }}
+      >
+        COMMUNITY
+      </button>
     </div>
   );
 }
-
-export default CommunityPlusLandingPage;

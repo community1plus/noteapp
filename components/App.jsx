@@ -4,20 +4,30 @@ import CommunityPlusLandingPage from "./CommunityPlusLandingPage"; // protected 
 import CommunityPlusHome from "./CommunityPlusHome"; // protected page
 import SignInRegister from "../src/SignInRegister";
 
-function App({ signOut, user }) {
+function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<CommunityPlusLandingPage />} /> 
-        <Route path="/home" element={<CommunityPlusHome />} /> 
-        <Route path="/login" element={<SignInRegister user={user} signOut={signOut} />} />
+        {/* Public landing page */}
+        <Route path="/" element={<CommunityPlusLandingPage />} />
+
+        {/* Protected home page */}
+        <Route
+          path="/home"
+          element={
+            <Authenticator>
+              {({ signOut, user }) => (
+                <CommunityPlusHome user={user} signOut={signOut} />
+              )}
+            </Authenticator>
+          }
+        />
       </Routes>
     </Router>
   );
 }
 
-// Protect the entire app with Auth (sign-in shown when unauthenticated)
-export default withAuthenticator(App, {
-  socialProviders: ["google", "facebook"],
-});
+export default App;
+
+
 
