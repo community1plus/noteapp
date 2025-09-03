@@ -8,10 +8,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Public landing page */}
         <Route path="/" element={<CommunityPlusLandingPage />} />
-
-        {/* Protected home page */}
         <Route
           path="/home"
           element={
