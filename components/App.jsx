@@ -8,12 +8,12 @@ function App({ signOut, user }) {
   return (
     <Router>
       <nav>
-        <Link to="/login">COMMUNITY</Link>
+        <Link to="/home">COMMUNITY</Link>
       </nav>
       <Routes>
-        <Route path="/" element={<h1>Landing Page</h1>} />
-        <Route path="/login" element={<SignInRegister user={user} signOut={signOut} />} />
+        <Route path="/" element={<CommunityPlusHome />} /> 
         <Route path="/home" element={<CommunityPlusHome />} /> 
+        <Route path="/login" element={<SignInRegister user={user} signOut={signOut} />} />
       </Routes>
     </Router>
   );
