@@ -1,40 +1,24 @@
-import { defineBackend, defineStorage, defineFunction, defineRestApi } from "@aws-amplify/backend";
+import { defineBackend, defineStorage, defineFunction } from "@aws-amplify/backend";
 
-// ---------- Storage ----------
 const storage = defineStorage({
   name: "videoStorage",
   access: (allow) => ({
-    "video-raw": [
-      allow.authenticated.to(["read", "write"]) // signed-in users upload
-    ],
-    "video-output": [
-      allow.guest.to(["read"]),                // playback public
-      allow.authenticated.to(["read"])
-    ]
-  }),
-  cors: {
-    "video-raw": {
-      allowedOrigins: ["*"],
-      allowedMethods: ["GET", "PUT", "HEAD", "OPTIONS"],
-      allowedHeaders: ["*"]
-    },
-    "video-output": {
-      allowedOrigins: ["*"],
-      allowedMethods: ["GET", "HEAD", "OPTIONS"],
-      allowedHeaders: ["*"]
-    }
-  }
+    "video-raw": [allow.authenticated.to(["read", "write"])],
+    "video-output": [allow.guest.to(["read"]), allow.authenticated.to(["read"])]
+  })
 });
 
-// ---------- Functions ----------
 const getUploadUrlFn = defineFunction({
   entry: "./functions/get-upload-url/handler.ts",
-  environment: {
-    RAW_BUCKET: "video-raw"
-  },
+  environment: { RAW_BUCKET: "video-raw" },
   access: (allow) => [
     allow.fromStorage("video-raw").to(["read", "write"])
-  ]
+  ],
+  // 👇 Expose as REST endpoint
+  api: {
+    path: "/generate-upload-url",
+    method: "POST"
+  }
 });
 
 const startTranscodeFn = defineFunction({
@@ -42,8 +26,8 @@ const startTranscodeFn = defineFunction({
   environment: {
     RAW_BUCKET: "video-raw",
     OUTPUT_BUCKET: "video-output",
-    MEDIACONVERT_ROLE_ARN: "",     // <-- fill with your IAM role ARN
-    MEDIACONVERT_ENDPOINT: ""      // <-- fill with MediaConvert endpoint
+    MEDIACONVERT_ROLE_ARN: "",
+    MEDIACONVERT_ENDPOINT: ""
   },
   access: (allow) => [
     allow.fromStorage("video-raw").to(["read"]),
@@ -57,23 +41,10 @@ const startTranscodeFn = defineFunction({
   ]
 });
 
-// ---------- API ----------
-const api = defineApi({
-  name: "videoApi",
-  routes: {
-    "POST /generate-upload-url": getUploadUrlFn
-  }
-});
-
-// ---------- Export backend ----------
 export default defineBackend({
   storage,
   functions: {
     getUploadUrl: getUploadUrlFn,
     startTranscode: startTranscodeFn
-  },
-  api
+  }
 });
-
-
-
