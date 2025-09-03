@@ -1,6 +1,10 @@
 import { defineAuth } from "@aws-amplify/backend-auth";
 import { secret } from "@aws-amplify/backend";
+import { defineStorage } from '@aws-amplify/backend';
 
+export const storage = defineStorage({
+  name: "VideoStorage",
+});
 
 export const auth = defineAuth({
   loginWith: {
