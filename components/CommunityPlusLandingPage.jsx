@@ -9,7 +9,7 @@ export default function CommunityPlusLandingPage() {
     getCurrentUser()
       .then(() => {
         // already signed in → go straight to /home
-        navigate("/home", { replace: true });
+        navigate("/", { replace: true });
       })
       .catch(() => {
         // not signed in → stay here
@@ -17,7 +17,7 @@ export default function CommunityPlusLandingPage() {
   }, [navigate]);
 
   const handleCommunityClick = () => {
-    navigate("/home"); // /home is wrapped in <Authenticator>, so it will show login if needed
+    navigate("/"); // /home is wrapped in <Authenticator>, so it will show login if needed
   };
 
   return (
