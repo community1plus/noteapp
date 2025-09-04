@@ -1,11 +1,12 @@
-import { defineAuth } from "@aws-amplify/backend-auth";
+//import { defineAuth } from "@aws-amplify/backend-auth";
 import { secret } from "@aws-amplify/backend";
+import { defineAuth } from '@aws-amplify/backend';
 
 export const auth = defineAuth({
   loginWith: {
     email: true,
-   
-    externalProviders: {
+  
+   externalProviders: {
       google: {
         clientId: secret("GOOGLE_CLIENT_ID"),
         clientSecret: secret("GOOGLE_CLIENT_SECRET"),
@@ -23,6 +24,12 @@ export const auth = defineAuth({
         "https://main.dmuplbxdc2r3b.amplifyapp.com/"
         // Add your production logout URLs here
       ],
+    },
+  },
+  userAttributes: {
+    email: {
+      required: false,   // 👈 this controls whether email is mandatory
+      mutable: true,
     },
   },
 });
