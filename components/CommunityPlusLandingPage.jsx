@@ -1,26 +1,23 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Auth } from "aws-amplify";
+import { getCurrentUser } from "aws-amplify/auth";
 
 export default function CommunityPlusLandingPage() {
   const navigate = useNavigate();
 
-  // On mount, check if the user is already authenticated
   useEffect(() => {
-    Auth.currentAuthenticatedUser()
+    getCurrentUser()
       .then(() => {
         // already signed in → go straight to /home
         navigate("/home", { replace: true });
       })
       .catch(() => {
-        // not signed in → stay on landing page
+        // not signed in → stay here
       });
   }, [navigate]);
 
   const handleCommunityClick = () => {
-    // Always push user to /home
-    // If not signed in, Authenticator at /home will show login
-    navigate("/home");
+    navigate("/home"); // /home is wrapped in <Authenticator>, so it will show login if needed
   };
 
   return (
