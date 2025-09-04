@@ -7,7 +7,6 @@ import { Authenticator } from "@aws-amplify/ui-react";
 
 function App() {
   return (
-    <BrowserRouter>
       <Routes>
         <Route path="/" element={<CommunityPlusLandingPage />} />
         <Route
@@ -21,7 +20,6 @@ function App() {
           }
         />
       </Routes>
-    </BrowserRouter>
   );
 }
 
