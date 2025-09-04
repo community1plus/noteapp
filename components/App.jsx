@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { withAuthenticator } from '@aws-amplify/ui-react';
 import CommunityPlusLandingPage from "./CommunityPlusLandingPage";
 import CommunityPlusHome from "./CommunityPlusHome";
-import SignInRegister from "./src/SignInRegister";
+import SignInRegister from "../src/SignInRegister";
 
 // Wrap your protected page with the HOC
 const ProtectedCommunityPlusHome = withAuthenticator(CommunityPlusHome);
