@@ -1,33 +1,24 @@
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { getCurrentUser } from "aws-amplify/auth";
 
 export default function CommunityPlusLandingPage() {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    getCurrentUser()
-      .then(() => {
-        // already signed in → go straight to /home
-        navigate("/", { replace: true });
-      })
-      .catch(() => {
-        // not signed in → stay here
-      });
-  }, [navigate]);
-
   const handleCommunityClick = () => {
-    navigate("/"); // /home is wrapped in <Authenticator>, so it will show login if needed
+    // Always go to /home, Authenticator will handle login if required
+    navigate("/home");
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "20vh" }}>
-      <h1>COMMUNITY+</h1>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
+      <h1 className="text-5xl font-bold mb-8">Welcome to Community+</h1>
+      <p className="text-lg text-gray-600 mb-10">
+        Stay updated with your local community news and events.
+      </p>
       <button
         onClick={handleCommunityClick}
-        style={{ padding: "10px 20px", fontSize: "1.2rem" }}
+        className="px-8 py-4 bg-blue-600 text-white text-lg rounded-2xl shadow-lg hover:bg-blue-700 transition"
       >
-        COMMUNITY+
+        Enter Community
       </button>
     </div>
   );
