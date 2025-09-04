@@ -26,10 +26,4 @@ export const auth = defineAuth({
       ],
     },
   },
-  userAttributes: {
-    email: {
-      required: false,   // 👈 this controls whether email is mandatory
-      mutable: true,
-    },
-  },
 });

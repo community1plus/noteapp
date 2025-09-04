@@ -12,10 +12,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* Landing page is public */}
-        <Route path="/" element={<CommunityPlusLandingPage />} />
+        <Route path="/home" element={<CommunityPlusLandingPage />} />
 
         {/* Protected route */}
-        <Route path="/home" element={<ProtectedCommunityPlusHome />} />
+        <Route path="/login" element={<ProtectedCommunityPlusHome />} />
 
         {/* Optional standalone sign-in/register route */}
         <Route path="/auth" element={<SignInRegister />} />
