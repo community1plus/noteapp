@@ -17,7 +17,7 @@ export default function CommunityPlusLandingPage() {
   }, [navigate]);
 
   const handleCommunityClick = () => {
-    navigate("/"); // /home is wrapped in <Authenticator>, so it will show login if needed
+    navigate("/home"); // /home is wrapped in <Authenticator>, so it will show login if needed
   };
 
   return (
