@@ -6,7 +6,7 @@ function CommunityPlusHome({ signOut, user }) {
     <div>
       <h1>Welcome {user?.username}</h1>
       <button onClick={signOut}>Sign out</button>
-      {/* Your home page content */}
+      {<h1>Community+ Home Page - Protected Content</h1>}
     </div>
   );
 }

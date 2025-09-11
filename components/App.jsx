@@ -11,10 +11,8 @@ export default function App() {
         <Route path="/" element={<CommunityPlusLandingPage />} />
 
         {/* Protected route */}
-        <Route path="/home" element={<CommunityPlusHome />} />
+        <Route path="/main" element={<CommunityPlusHome />} />
 
-        {/* Optional custom auth page */}
-        <Route path="/auth" element={<SignInRegister />} />
       </Routes>
     </BrowserRouter>
   );
