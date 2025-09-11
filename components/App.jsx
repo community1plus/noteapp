@@ -5,7 +5,7 @@ import CommunityPlusHome from "./CommunityPlusHome";
 import SignInRegister from "../src/SignInRegister";
 
 // Wrap your protected page with the HOC
-const ProtectedCommunityPlusHome = Authenticator(CommunityPlusHome);
+const ProtectedCommunityPlusHome = CommunityPlusHome;
 
 function App() {
   return (
@@ -15,13 +15,22 @@ function App() {
         <Route path="/" element={<CommunityPlusLandingPage />} />
 
         {/* Protected route */}
-        <Route path="/home" element={<ProtectedCommunityPlusHome />} />
+        
+        <Route
+  path="/home"
+  element={
+    <Authenticator>
+      {({ signOut, user }) => (
+        <ProtectedCommunityPlusHome user={user} signOut={signOut} />
+      )}
+    </Authenticator>
+  }
+/>
 
-        {/* Optional standalone sign-in/register route */}
-        <Route path="/auth" element={<SignInRegister />} />
+       <Route path="/auth" element={<SignInRegister />} />
       </Routes>
     </BrowserRouter>
   );
 }
 
-export default Authenticator(App);
+export default App;
