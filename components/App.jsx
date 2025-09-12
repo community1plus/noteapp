@@ -14,9 +14,17 @@ export default function App() {
         {/* Protected route */}
         <Route path="/home" element={<CommunityPlusHome />} />
 
-        {/* Protected route */}
-        <Route path="/main" element={<CommunityPlusHomePage />} />
-
+        {/* Post-login landing page */}
+        <Route
+          path="/main"
+          element={
+            <Authenticator>
+              {({ user, signOut }) => (
+                <CommunityPlusHomePage user={user} signOut={signOut} />
+              )}
+            </Authenticator>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
