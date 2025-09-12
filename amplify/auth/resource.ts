@@ -17,7 +17,6 @@ export const auth = defineAuth({
       },
       callbackUrls: [
         "http://localhost:3000/",
-        "https://main.dmuplbxdc2r3b.amplifyapp.com/home",
         "https://main.dmuplbxdc2r3b.amplifyapp.com/main",
         // Add your production callback URLs here
       ],
