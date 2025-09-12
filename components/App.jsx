@@ -13,6 +13,9 @@ export default function App() {
         {/* Protected route */}
         <Route path="/home" element={<CommunityPlusHome />} />
 
+        {/* Protected route */}
+        <Route path="/main" element={<CommunityPlusLandingPage />} />
+
       </Routes>
     </BrowserRouter>
   );
