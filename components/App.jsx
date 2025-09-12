@@ -1,30 +1,27 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CommunityPlusLandingPage from "./CommunityPlusLandingPage";
-import CommunityPlusHomePage from "./CommunityPlusHomePage";
-import CommunityPlusHome from "./CommunityPlusHome";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { withAuthenticator } from "@aws-amplify/ui-react";
 
-export default function App() {
+import CommunityPlusLandingPage from "./CommunityPlusLandingPage";
+import CommunityPlusHome from "./CommunityPlusHome";
+import CommunityPlusHomePage from "./CommunityPlusHomePage";
+
+function App({ signOut, user }) {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Landing page is public */}
+        {/* Public route */}
         <Route path="/" element={<CommunityPlusLandingPage />} />
 
-        {/* Protected route */}
-        <Route path="/home" element={<CommunityPlusHome />} />
+        {/* Protected routes */}
+        <Route path="/home" element={<CommunityPlusHome user={user} signOut={signOut} />} />
+        <Route path="/main" element={<CommunityPlusHomePage user={user} signOut={signOut} />} />
 
-        {/* Post-login landing page */}
-        <Route
-          path="/main"
-          element={
-            <Authenticator>
-              {({ user, signOut }) => (
-                <CommunityPlusHomePage user={user} signOut={signOut} />
-              )}
-            </Authenticator>
-          }
-        />
+        {/* Default → if authenticated, go to /main */}
+        <Route path="*" element={<Navigate to="/main" replace />} />
       </Routes>
     </BrowserRouter>
   );
 }
+
+export default withAuthenticator(App);
+
