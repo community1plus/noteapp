@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CommunityPlusLandingPage from "./CommunityPlusLandingPage";
+import CommunityPlusHomePage from "./CommunityPlusHomePage";
 import CommunityPlusHome from "./CommunityPlusHome"; // already protected by HOC
 import SignInRegister from "../src/SignInRegister";
 
