@@ -9,15 +9,7 @@ function App({ signOut, user }) {
         <Route path="/"
           element={<CommunityPlusLandingPage user={user} signOut={signOut} />}
         />
-
-        {/* Protected routes */}
-        
-        <Route path="/main"
-          element={<CommunityPlusHomePage user={user} signOut={signOut} />}
-        />
-
-        {/* Catch-all → go to /main */}
-        <Route path="*" element={<Navigate to="/main" replace />} />
+ 
       </Routes>
     </BrowserRouter>
   );
