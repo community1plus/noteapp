@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { withAuthenticator } from "@aws-amplify/ui-react";
-import CommunityPlusLandingPage from "./CommunityPlusLandingPage";
 import CommunityPlusHome from "./CommunityPlusHome";
 import CommunityPlusHomePage from "./CommunityPlusHomePage";
 
@@ -8,16 +7,13 @@ function App({ signOut, user }) {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Public landing page (auto-redirects if user is signed in) */}
-        <Route path="/home" 
-        element={<CommunityPlusLandingPage user={user} />} />
-
+        
         {/* Protected routes */}
         <Route
           path="/"
           element={<CommunityPlusHome user={user} signOut={signOut} />}
         />
-        <Route          path="/main"
+        <Route path="/main"
           element={<CommunityPlusHomePage user={user} signOut={signOut} />}
         />
 
