@@ -28,4 +28,4 @@ const CommunityPlusHomePage = () => {
   );
 };
 
-export default CommunityPlusLandingPage;
+export default CommunityPlusHomePage;
