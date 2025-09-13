@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { withAuthenticator } from "@aws-amplify/ui-react";
 import CommunityPlusHomePage from "./CommunityPlusHomePage";
+import CommunityPlusLandingPage from "./CommunityPlusLandingPage";
 
 function App({ signOut, user }) {
   return (
