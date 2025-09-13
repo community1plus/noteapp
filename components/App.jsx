@@ -9,14 +9,20 @@ function App({ signOut, user }) {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Public route */}
-        <Route path="/" element={<CommunityPlusLandingPage />} />
+        {/* Public landing page (auto-redirects if user is signed in) */}
+        <Route path="/" element={<CommunityPlusLandingPage user={user} />} />
 
         {/* Protected routes */}
-        <Route path="/home" element={<CommunityPlusHome user={user} signOut={signOut} />} />
-        <Route path="/main" element={<CommunityPlusHomePage user={user} signOut={signOut} />} />
+        <Route
+          path="/home"
+          element={<CommunityPlusHome user={user} signOut={signOut} />}
+        />
+        <Route
+          path="/main"
+          element={<CommunityPlusHomePage user={user} signOut={signOut} />}
+        />
 
-        {/* Default → if authenticated, go to /main */}
+        {/* Catch-all → go to /main */}
         <Route path="*" element={<Navigate to="/main" replace />} />
       </Routes>
     </BrowserRouter>

@@ -1,11 +1,19 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function CommunityPlusLandingPage() {
+export default function CommunityPlusLandingPage({ user }) {
   const navigate = useNavigate();
 
+  // Auto-redirect signed-in users
+  useEffect(() => {
+    if (user) {
+      navigate("/main", { replace: true });
+    }
+  }, [user, navigate]);
+
   const handleCommunityClick = () => {
-    // Always go to /home, Authenticator will handle login if required
-    navigate("/home");
+    // Send everyone to /main — Authenticator at App level protects it
+    navigate("/main");
   };
 
   return (
