@@ -10,6 +10,10 @@ function App({ signOut, user }) {
         <Route path="/"
           element={<CommunityPlusLandingPage user={user} signOut={signOut} />}
         />
+
+        <Route path="/main"
+          element={<CommunityPlusHomePage user={user} signOut={signOut} />}
+        />
  
       </Routes>
     </BrowserRouter>
