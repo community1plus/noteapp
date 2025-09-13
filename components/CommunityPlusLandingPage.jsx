@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function CommunityPlusLandingPage({ user }) {
+function CommunityPlusLandingPage({ user }) {
   const navigate = useNavigate();
 
   // Auto-redirect signed-in users
@@ -31,3 +31,5 @@ export default function CommunityPlusLandingPage({ user }) {
     </div>
   );
 }
+
+export default CommunityPlusLandingPage;
