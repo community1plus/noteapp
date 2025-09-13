@@ -7,10 +7,13 @@ function App({ signOut, user }) {
   return (
     <BrowserRouter>
       <Routes>
-        
+        <Route path="/"
+          element={<CommunityPlusLandingPage user={user} signOut={signOut} />}
+        />
+
         {/* Protected routes */}
         <Route
-          path="/"
+          path="/home"
           element={<CommunityPlusHome user={user} signOut={signOut} />}
         />
         <Route path="/main"
