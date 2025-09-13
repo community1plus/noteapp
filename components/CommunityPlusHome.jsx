@@ -1,6 +1,6 @@
 import React from "react";
 
-function CommunityPlusHome({ signOut, user }) {
+export default function CommunityPlusHome({ user, signOut }) {
   return (
     <div>
       <h1>Welcome {user?.username}</h1>
@@ -13,6 +13,6 @@ function CommunityPlusHome({ signOut, user }) {
   );
 }
 
-export default CommunityPlusHome;
+
 
 
