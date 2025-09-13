@@ -16,11 +16,11 @@ function App({ signOut, user }) {
         <Route
           path="/main"
           element={
-            <withAuthenticator>
+            <Authenticator>
               {({ signOut, user }) => (
                 <CommunityPlusHomePage user={user} signOut={signOut} />
               )}
-            </withAuthenticator>
+            </Authenticator>
           }
         />
  
