@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import "../src/CommunityPlusLandingPage.css";
 
 function CommunityPlusLandingPage({ user }) {
   const navigate = useNavigate();
