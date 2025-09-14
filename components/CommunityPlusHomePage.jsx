@@ -1,6 +1,15 @@
 import React from "react";
 import "../src/CommunityPlusHomePage.css";
 
+function CommunityPlusHomePage({ user, signOut }) {
+  return (
+    <div>
+      <h1>Welcome {user?.username}</h1>
+      <button onClick={signOut}>Logout</button>
+    </div>
+  );
+}
+
 const CommunityPlusHomePage = () => {
   return (
     <div className="page-container">
