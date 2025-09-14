@@ -16,3 +16,4 @@ function CommunityPlusHomePage({ user, signOut }) {
   );
 }
 
+export default CommunityPlusHomePage;
