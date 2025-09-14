@@ -1,6 +1,5 @@
-
+import { defineAuth } from "@aws-amplify/backend";
 import { secret } from "@aws-amplify/backend";
-import { defineAuth } from '@aws-amplify/backend';
 
 export const auth = defineAuth({
   loginWith: {
@@ -9,19 +8,14 @@ export const auth = defineAuth({
       google: {
         clientId: secret("GOOGLE_CLIENT_ID"),
         clientSecret: secret("GOOGLE_CLIENT_SECRET"),
-        scopes: ["openid", "email"], // ✅ required
-        tokenscope: "https://www.googleapis.com/auth/userinfo.email", // ✅ required
-        tokenscope: "https://www.googleapis.com/auth/userinfo.profile", // ✅ required
-        tokenscope: OpenIdConnect, // ✅ required
       },
       facebook: {
         clientId: secret("FACEBOOK_APP_ID"),
         clientSecret: secret("FACEBOOK_APP_SECRET"),
-        scopes: ["openid", "email"], // ✅ required
       },
       callbackUrls: [
         "http://localhost:3000/",
-        "https://main.dmuplbxdc2r3b.amplifyapp.com/main",
+        "https://main.dmuplbxdc2r3b.amplifyapp.com/main/",
       ],
       logoutUrls: [
         "http://localhost:3000/",
@@ -29,4 +23,12 @@ export const auth = defineAuth({
       ],
     },
   },
+
+  // ✅ These scopes must match what you use in frontend Amplify.configure
+  tokenScopes: [
+    "openid",
+    "email",
+
+
+  ],
 });
