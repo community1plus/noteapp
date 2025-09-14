@@ -1,40 +1,18 @@
-import React from "react";
-import "../src/CommunityPlusHomePage.css";
+import { useNavigate } from "react-router-dom";
 
-function logout({ user, signOut }) {
+function CommunityPlusHomePage({ user, signOut }) {
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    await signOut();          // Amplify logout
+    navigate("/");            // React Router redirect
+  };
+
   return (
     <div>
       <h1>Welcome {user?.username}</h1>
-      <button onClick={signOut}>Logout</button>
+      <button onClick={handleLogout}>Logout</button>
     </div>
   );
 }
 
-const CommunityPlusHomePage = () => {
-  return (
-    <div className="page-container">
-      {/* Header / Nav */}
-      <header className="header">
-        <div className="logo">Community+</div>
-
-        <nav>
-          <ul className="nav-links">
-            <li>HOME</li>
-            <li>NEWS</li>
-            <li>OPINION</li>
-            <li>EVENTS</li>
-            <li>ASSIST</li>
-            <li>COMMUNITY+</li>
-          </ul>
-        </nav>
-      </header>
-
-      {/* Placeholder Main Content */}
-      <main className="main">
-        {logout({ user, signOut })}
-      </main>
-    </div>
-  );
-};
-
-export default CommunityPlusHomePage;
