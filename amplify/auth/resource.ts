@@ -8,10 +8,12 @@ export const auth = defineAuth({
       google: {
         clientId: secret("GOOGLE_CLIENT_ID"),
         clientSecret: secret("GOOGLE_CLIENT_SECRET"),
+        scopes: ['openid','email'],
       },
       facebook: {
         clientId: secret("FACEBOOK_APP_ID"),
         clientSecret: secret("FACEBOOK_APP_SECRET"),
+        scopes: ['email'],
       },
       callbackUrls: [
         "http://localhost:3000/",
@@ -23,12 +25,4 @@ export const auth = defineAuth({
       ],
     },
   },
-
-  // ✅ These scopes must match what you use in frontend Amplify.configure
-  tokenScopes: [
-    "openid",
-    "email",
-
-
-  ],
 });
