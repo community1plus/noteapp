@@ -1,7 +1,7 @@
 import React from "react";
 import "../src/CommunityPlusHomePage.css";
 
-function CommunityPlusHomePage({ user, signOut }) {
+function logout({ user, signOut }) {
   return (
     <div>
       <h1>Welcome {user?.username}</h1>
@@ -31,7 +31,7 @@ const CommunityPlusHomePage = () => {
 
       {/* Placeholder Main Content */}
       <main className="main">
-        <h1>Welcome to Community+</h1>
+        {logout({ user, signOut })}
       </main>
     </div>
   );
