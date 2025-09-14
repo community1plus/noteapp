@@ -8,7 +8,7 @@ import "@aws-amplify/ui-react/styles.css";
 
 function App({ signOut, user }) {
   return (
-   
+   <BrowserRouter>
       <Routes>
         <Route path="/"
           element={<CommunityPlusLandingPage user={user} signOut={signOut} />}
@@ -27,7 +27,7 @@ function App({ signOut, user }) {
       />
  
       </Routes>
-
+</BrowserRouter>
   );
 }
 
