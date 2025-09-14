@@ -10,6 +10,9 @@ export const auth = defineAuth({
         clientId: secret("GOOGLE_CLIENT_ID"),
         clientSecret: secret("GOOGLE_CLIENT_SECRET"),
         scopes: ["openid", "email"], // ✅ required
+        tokenscope: "https://www.googleapis.com/auth/userinfo.email", // ✅ required
+        tokenscope: "https://www.googleapis.com/auth/userinfo.profile", // ✅ required
+        tokenscope: OpenIdConnect, // ✅ required
       },
       facebook: {
         clientId: secret("FACEBOOK_APP_ID"),
