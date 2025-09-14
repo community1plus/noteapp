@@ -17,7 +17,7 @@ function App({ signOut, user }) {
 
         {/* OAuth Callback & Landing page after login */}
         <Route
-        path="/main"
+        path="/src/main"
         element={
           <Authenticator>
             {({ signOut, user }) => (
