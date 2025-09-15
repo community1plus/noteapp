@@ -13,7 +13,7 @@ export const auth = defineAuth({
       facebook: {
         clientId: secret("FACEBOOK_APP_ID"),
         clientSecret: secret("FACEBOOK_APP_SECRET"),
-        scopes: ['email'],
+        scopes: ['email', 'id'],
       },
       callbackUrls: [
         "http://localhost:3000/",
