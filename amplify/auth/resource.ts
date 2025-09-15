@@ -8,12 +8,12 @@ export const auth = defineAuth({
       google: {
         clientId: secret("GOOGLE_CLIENT_ID"),
         clientSecret: secret("GOOGLE_CLIENT_SECRET"),
-        scopes: ['openid','email'],
+        scopes: ['openid','email', 'profile'],
       },
       facebook: {
         clientId: secret("FACEBOOK_APP_ID"),
         clientSecret: secret("FACEBOOK_APP_SECRET"),
-        scopes: ['openid','email'],
+        scopes: ['openid', 'email', 'profile']
       },
       callbackUrls: [
         "http://localhost:3000/",
