@@ -21,7 +21,7 @@ function App({ signOut, user }) {
         element={
           <Authenticator>
             {({ signOut, user }) => (
-              <CommunityPlusHomePage user={user} signOut={signOut} />
+              <CommunityPlusNewsContribution user={user} signOut={signOut} />
             )}
           </Authenticator>
         }
