@@ -1,27 +1,27 @@
 import React, { useState } from "react";
-import "../src/CommunityPlusNewsContribution.css";
+import "./CommunityPlusNewsContribution.css";
 
 function CommunityPlusNewsContribution({ user, signOut }) {
   const [blurb, setBlurb] = useState("");
-  const [images, setImages] = useState([]);
+  const [media, setMedia] = useState([]); // images + videos
   const [submittedPosts, setSubmittedPosts] = useState([]);
 
-  const handleImageUpload = (e) => {
+  const handleMediaUpload = (e) => {
     const files = Array.from(e.target.files);
-    setImages(files);
+    setMedia(files);
   };
 
   const handleSubmit = () => {
-    if (!blurb.trim() && images.length === 0) {
-      alert("Please add a news blurb or image before submitting.");
+    if (!blurb.trim() && media.length === 0) {
+      alert("Please add a news blurb or media before submitting.");
       return;
     }
 
-    const newPost = { blurb, images, timestamp: new Date().toISOString() };
+    const newPost = { blurb, media, timestamp: new Date().toISOString() };
     setSubmittedPosts([newPost, ...submittedPosts]);
 
     setBlurb("");
-    setImages([]);
+    setMedia([]);
 
     alert("✅ News submitted successfully!");
   };
@@ -53,20 +53,28 @@ function CommunityPlusNewsContribution({ user, signOut }) {
           <div className="media-upload">
             <input
               type="file"
-              accept="image/*"
+              accept="image/*,video/*"
               multiple
-              onChange={handleImageUpload}
+              onChange={handleMediaUpload}
             />
 
-            {images.length > 0 && (
-              <div className="image-preview">
-                {images.map((file, idx) => (
-                  <img
-                    key={idx}
-                    src={URL.createObjectURL(file)}
-                    alt="preview"
-                  />
-                ))}
+            {media.length > 0 && (
+              <div className="media-preview">
+                {media.map((file, idx) =>
+                  file.type.startsWith("image/") ? (
+                    <img
+                      key={idx}
+                      src={URL.createObjectURL(file)}
+                      alt="preview"
+                    />
+                  ) : (
+                    <video
+                      key={idx}
+                      controls
+                      src={URL.createObjectURL(file)}
+                    />
+                  )
+                )}
               </div>
             )}
           </div>
@@ -88,15 +96,23 @@ function CommunityPlusNewsContribution({ user, signOut }) {
               {submittedPosts.map((post, idx) => (
                 <div className="submission" key={idx}>
                   <p>{post.blurb}</p>
-                  {post.images.length > 0 && (
-                    <div className="image-preview">
-                      {post.images.map((file, imgIdx) => (
-                        <img
-                          key={imgIdx}
-                          src={URL.createObjectURL(file)}
-                          alt="submitted"
-                        />
-                      ))}
+                  {post.media.length > 0 && (
+                    <div className="media-preview">
+                      {post.media.map((file, mediaIdx) =>
+                        file.type.startsWith("image/") ? (
+                          <img
+                            key={mediaIdx}
+                            src={URL.createObjectURL(file)}
+                            alt="submitted"
+                          />
+                        ) : (
+                          <video
+                            key={mediaIdx}
+                            controls
+                            src={URL.createObjectURL(file)}
+                          />
+                        )
+                      )}
                     </div>
                   )}
                   <small>
