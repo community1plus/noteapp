@@ -35,7 +35,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 160px;             /* enough for logo + location */
+  height: 60px;             /* enough for logo + location */
   display: flex;
   justify-content: space-between;
   align-items: center;       /* center vertically */
