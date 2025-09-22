@@ -45,14 +45,6 @@
   margin-top: 100px;   /* match header height */
 }
 
-
-
-.logo {
-  font-size: 60px;
-  font-weight: bold;
-  color: #d32f2f; /* Bold red */
-}
-
 .search-box {
   flex: 1;
   margin: 0 40px;
