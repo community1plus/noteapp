@@ -31,17 +31,13 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 120px;          /* make header tall enough */
+  height: 140px;            /* give more vertical room */
   display: flex;
   justify-content: space-between;
-  align-items: center;    /* vertically center */
+  align-items: flex-start;  /* align from top, not center */
   background: #fff;
-  padding: 0 24px;
-  border-bottom: 1px solid #ddd;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 16px 24px;       /* top padding so logo isn't touching edge */
 }
-
 /* Push content below fixed header */
 .main {
   display: flex;
