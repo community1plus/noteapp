@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./CommunityPlusNewsContribution.css";
+import "../src/CommunityPlusNewsContribution.css";
 
 function CommunityPlusNewsContribution({ user, signOut }) {
   const [blurb, setBlurb] = useState("");
