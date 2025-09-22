@@ -26,21 +26,29 @@
 }
 
 /* Header */
-
 .header {
-  position: fixed;        /* stick to the top */
+  position: fixed;       /* stick to the top */
   top: 0;
   left: 0;
-  width: 100%;            /* stretch full width */
-  height: 60px;           /* consistent height */
+  width: 100%;           /* stretch full width */
+  height: 100px;         /* enough height for logo + location */
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #fff;
   padding: 0 24px;
   border-bottom: 1px solid #ddd;
-  z-index: 1000;          /* keep it above main content */
+  z-index: 1000;         /* keep above content */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
+/* Push content below fixed header */
+.main {
+  display: flex;
+  flex: 1;
+  margin-top: 100px;   /* match header height */
+}
+
 
 
 .logo {
