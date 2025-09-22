@@ -5,7 +5,7 @@
 }
 
 .logo {
-  font-size: 60px;
+  font-size: 40px;
   font-weight: bold;
   color: #d32f2f; /* Bold red */
   line-height: 1;
@@ -31,7 +31,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 140px;            /* give more vertical room */
+  height: 100px;            /* give more vertical room */
   display: flex;
   justify-content: space-between;
   align-items: flex-start;  /* align from top, not center */
