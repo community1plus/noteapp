@@ -2,12 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  transform: translateY(20px); /* adjust vertical offset until logo matches input */
+  transform: translateY(30px); /* adjust vertical offset until logo matches input */
 }
 
 /* Logo styling */
 .logo {
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
   color: #d32f2f;
 }
