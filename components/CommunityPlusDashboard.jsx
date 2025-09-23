@@ -1,0 +1,91 @@
+import React, { useState, useEffect, useRef } from "react";
+import { GoogleMap, LoadScript, Marker, StandaloneSearchBox } from "@react-google-maps/api";
+import "./CommunityPlusDashboard.css";
+
+function CommunityPlusDashboard() {
+  const [coords, setCoords] = useState({ lat: -37.8136, lng: 144.9631 }); // default Melbourne
+  const [location, setLocation] = useState("Detecting location...");
+  const searchBoxRef = useRef(null);
+
+  // Try geolocation + IP fallback
+  useEffect(() => {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          const { latitude, longitude } = pos.coords;
+          setCoords({ lat: latitude, lng: longitude });
+          setLocation(`Lat: ${latitude.toFixed(4)}, Lon: ${longitude.toFixed(4)}`);
+        },
+        () => {
+          fetch("https://ipapi.co/json/")
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.latitude && data.longitude) {
+                setCoords({ lat: data.latitude, lng: data.longitude });
+                setLocation(`${data.city}, ${data.region}`);
+              } else {
+                setLocation("Location unavailable");
+              }
+            });
+        }
+      );
+    }
+  }, []);
+
+  // Handle autocomplete place selection
+  const onPlacesChanged = () => {
+    const places = searchBoxRef.current.getPlaces();
+    if (places && places.length > 0) {
+      const place = places[0];
+      const lat = place.geometry.location.lat();
+      const lng = place.geometry.location.lng();
+      setCoords({ lat, lng });
+      setLocation(place.formatted_address);
+    }
+  };
+
+  return (
+    <div className="dashboard">
+      {/* Left column: Google Map */}
+      <div className="map-column">
+        <LoadScript
+          googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY"
+          libraries={["places"]}
+        >
+          <div className="search-bar">
+            <StandaloneSearchBox
+              onLoad={(ref) => (searchBoxRef.current = ref)}
+              onPlacesChanged={onPlacesChanged}
+            >
+              <input
+                type="text"
+                placeholder="Enter suburb or postcode"
+                className="location-input"
+              />
+            </StandaloneSearchBox>
+          </div>
+
+          <GoogleMap
+            center={coords}
+            zoom={14}
+            mapContainerStyle={{ width: "100%", height: "100%" }}
+          >
+            <Marker position={coords} />
+          </GoogleMap>
+        </LoadScript>
+
+        <div className="location-label">{location}</div>
+      </div>
+
+      {/* Right column: Feed */}
+      <div className="feed-column">
+        <h2>Community News & Events</h2>
+        {/* TODO: fetch feed by location */}
+        <div className="news-item">📰 Example news headline 1</div>
+        <div className="news-item">📰 Example news headline 2</div>
+      </div>
+    </div>
+  );
+}
+
+export default CommunityPlusDashboard;

@@ -1,0 +1,34 @@
+.dashboard {
+  display: flex;
+  height: calc(100vh - 100px); /* full screen below header */
+}
+
+/* Left column: map */
+.map-column {
+  flex: 1;
+  position: relative;
+}
+
+.location-label {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(255,255,255,0.8);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Right column: feed */
+.feed-column {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  border-left: 1px solid #ddd;
+}
+
+.news-item {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
