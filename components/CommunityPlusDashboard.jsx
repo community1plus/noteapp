@@ -68,7 +68,7 @@ function CommunityPlusDashboard() {
           <GoogleMap
             center={coords}
             zoom={14}
-            mapContainerStyle={{ width: "100%", height: "100%" }}
+            mapContainerClassName="map-container"
           >
             <Marker position={coords} />
           </GoogleMap>
