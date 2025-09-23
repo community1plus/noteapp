@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../src/CommunityPlusNewsContribution.css";
+import "./CommunityPlusDashboard";
 import "../src/CommunityPlusNewsContribution.css";
 
 function CommunityPlusNewsContribution({ user, signOut }) {
