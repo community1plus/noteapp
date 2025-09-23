@@ -2,7 +2,6 @@
 .logo-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;  /* push logo+geo to top of container */
   align-items: flex-start;
 }
 
