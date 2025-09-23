@@ -22,14 +22,6 @@
   margin-top: 4px;
 }
 
-/* Layout */
-.news-page {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  font-family: Arial, sans-serif;
-}
-
 /* Header */
 .header {
   position: fixed;
@@ -49,8 +41,6 @@
 
 /* Push content below fixed header */
 .main {
-  display: flex;
-  flex: 1;
   margin-top: 100px;
 }
 
