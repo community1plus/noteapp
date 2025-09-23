@@ -1,8 +1,8 @@
-/* Logo container stays at top-left */
 .logo-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  transform: translateY(8px); /* adjust vertical offset until logo matches input */
 }
 
 /* Logo styling */
@@ -26,21 +26,13 @@
   font-family: Arial, sans-serif;
 }
 
-/* Header */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;             /* enough for logo + location */
   display: flex;
   justify-content: space-between;
-  align-items: center;       /* center vertically */
-  background: #fff;
-  padding: 0 24px;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  align-items: center;   /* aligns logo + input + profile on the same baseline */
+  height: 100px;
 }
+
 /* Push content below fixed header */
 .main {
   display: flex;
