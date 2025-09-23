@@ -51,12 +51,12 @@
 
 .search-box {
   flex: 1;
-  margin: 0 40px;
+  margin: 0;
 }
 
 .search-box input {
   width: 100%;
-  padding: 8px 12px;
+  padding: 0px 0px;
   border: 1px solid #ccc;
   border-radius: 6px;
 }
