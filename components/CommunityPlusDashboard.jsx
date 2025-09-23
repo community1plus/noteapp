@@ -49,7 +49,7 @@ function CommunityPlusDashboard() {
       {/* Left column: Google Map */}
       <div className="map-column">
         <LoadScript
-          googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY"
+          googleMapsApiKey="AIzaSyCPG5QI1XTpFjgcTaDoY_rN5qxR3susJrc"
           libraries={["places"]}
         >
           <div className="search-bar">
