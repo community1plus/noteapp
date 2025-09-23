@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./CommunityPlusDashboard";
+import CommunityPlusDashboard from "./CommunityPlusDashboard";
 import "../src/CommunityPlusNewsContribution.css";
 
 function CommunityPlusNewsContribution({ user, signOut }) {
@@ -45,29 +45,26 @@ function CommunityPlusNewsContribution({ user, signOut }) {
   }, []);
 
   return (
-    <div>
-      <header className="header">
-        <div className="logo-container">
-          <div className="logo">Community+</div>
-          <div className="geo">{location}</div>
-        </div>
+    <><header className="header">
+      <div className="logo-container">
+        <div className="logo">Community+</div>
+        <div className="geo">{location}</div>
+      </div>
 
-        <div className="search-box">
-          <input type="text" placeholder="AI Search..." />
-        </div>
+      <div className="search-box">
+        <input type="text" placeholder="AI Search..." />
+      </div>
 
-        <div className="profile">
-          <div className="avatar">{user?.username?.[0]?.toUpperCase() || "U"}</div>
-          <button className="logout" onClick={signOut}>
-            Logout
-          </button>
-        </div>
-      </header>
-      <main className="main">
-          {/* Dashboard goes here */}
-          <CommunityPlusDashboard />
-        </main>
-    </div>
+      <div className="profile">
+        <div className="avatar">{user?.username?.[0]?.toUpperCase() || "U"}</div>
+        <button className="logout" onClick={signOut}>
+          Logout
+        </button>
+      </div>
+    </header><main className="main">
+        {/* Dashboard goes here */}
+        <CommunityPlusDashboard />
+      </main></>
   );
 }
 
