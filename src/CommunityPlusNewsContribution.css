@@ -4,6 +4,7 @@
   margin: 0; /* keep it natural inside the header */
   line-height: 1;
   justify-content: center;
+  align-items: center;
 }
 
 /* Logo styling */
@@ -16,6 +17,7 @@
   line-height: 1;
   margin: 0;
   justify-content: center;
+  align-items: center;
 }
 
 /* Geolocation text just under logo */
@@ -27,6 +29,7 @@
   margin: 0;
   line-height: 1;
   justify-content: flex-start;
+  align-items: center;
 }
 
 /* Header */
@@ -39,7 +42,7 @@
   display: flex;
   justify-content: center;
   align-items: center;         /* ⬅️ aligns logo + search + profile on same line */
-  background: #fff;
+  background: #696767;
   padding: 0 24px;
   border-bottom: 0px solid #ddd;
   z-index: 1000;
@@ -48,7 +51,7 @@
 
 /* Push content below fixed header */
 .main {
-  margin-top: 100px;
+  margin-top: 120px;
 }
 
 .search-box {
