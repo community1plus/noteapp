@@ -47,7 +47,6 @@ function CommunityPlusNewsContribution({ user, signOut }) {
     <header className="header">
       <div className="logo-container">
         <div className="logo">Community+</div>
-        <div className="geo">{location}</div>
       </div>
 
       <div className="search-box">
