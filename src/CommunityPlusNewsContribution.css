@@ -23,7 +23,8 @@
   font-size: 14px;
   color: #555;
   margin: 0;
-  line-height: 1
+  line-height: 1;
+  justify-content: flex-start;
 }
 
 /* Header */
@@ -45,7 +46,7 @@
 
 /* Push content below fixed header */
 .main {
-  margin-top: 60px;
+  margin-top: 100px;
 }
 
 .search-box {
