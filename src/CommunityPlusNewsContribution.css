@@ -72,35 +72,6 @@
   border-radius: 20px;
 }
 
-.search-bar {
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 9999px; /* fully rounded */
-  overflow: hidden;
-  width: 400px; /* adjust as needed */
-}
-
-.search-bar input {
-  flex: 1;
-  border: none;
-  outline: none;
-  padding: 10px 15px;
-  font-size: 16px;
-}
-
-.search-bar .search-button {
-  background: #fff;
-  border: none;
-  padding: 0 15px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px; /* size of the magnifying glass */
-}
-
-
 /* Profile */
 .profile {
   display: flex;
@@ -111,13 +82,13 @@
 .avatar {
   width: 40px;
   height: 40px;
-  background: #e6e1e1;
+  background: #eee8e8;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  color: #b41b1b;
+  color: #444;
 }
 
 .logout {

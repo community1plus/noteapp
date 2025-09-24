@@ -51,11 +51,9 @@ function CommunityPlusNewsContribution({ user, signOut }) {
         <div className="geo">{location}</div>
       </div>
 
-      <div className="search-bar">
-        <input type="text" placeholder="Search" />
-        <button className="search-button"> 🔍 </button>
-</div>
-
+      <div className="search-box">
+        <input type="text" placeholder="AI Search..." />
+      </div>
 
       <div className="profile">
       <div className="avatar">
@@ -65,9 +63,9 @@ function CommunityPlusNewsContribution({ user, signOut }) {
         .join("")
         .toUpperCase() || "U"}
       </div>
-      <button className="logout" onClick={signOut}>
-        Logout
-      </button>
+  <button className="logout" onClick={signOut}>
+    Logout
+  </button>
 </div>
 
     </header>
