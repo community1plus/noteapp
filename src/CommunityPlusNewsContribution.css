@@ -45,7 +45,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px;               /* header height */
+  height: 80px;               /* header height */
   display: flex;
   justify-content: center;
   align-items: center;         /* ⬅️ aligns logo + search + profile on same line */
