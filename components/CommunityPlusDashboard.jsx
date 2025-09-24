@@ -74,7 +74,6 @@ function CommunityPlusDashboard() {
           </GoogleMap>
         </LoadScript>
 
-        <div className="location-label">{location}</div>
       </div>
 
       {/* Right column: Feed */}
