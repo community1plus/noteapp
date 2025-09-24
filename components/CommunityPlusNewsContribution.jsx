@@ -56,11 +56,18 @@ function CommunityPlusNewsContribution({ user, signOut }) {
       </div>
 
       <div className="profile">
-        <div className="avatar">{user?.username?.[0]?.toUpperCase() || "U"}</div>
-        <button className="logout" onClick={signOut}>
-          Logout
-        </button>
+      <div className="avatar">
+        {user?.username
+        ?.split(" ")
+        .map(word => word[0])
+        .join("")
+        .toUpperCase() || "U"}
       </div>
+  <button className="logout" onClick={signOut}>
+    Logout
+  </button>
+</div>
+
     </header>
     <main className="main">
         {/* Dashboard goes here */}
