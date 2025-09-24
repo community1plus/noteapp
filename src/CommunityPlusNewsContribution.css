@@ -34,6 +34,7 @@
   justify-content: center;
   align-items: center;
   padding: 0;
+  overflow: auto;
 }
 
 /* Header */
@@ -55,7 +56,7 @@
 
 /* Push content below fixed header */
 .main {
-  margin-top: 120px;
+  margin-top: 80px;
 }
 
 .search-box {
