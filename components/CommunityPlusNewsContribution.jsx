@@ -61,10 +61,12 @@ function CommunityPlusNewsContribution({ user, signOut }) {
           Logout
         </button>
       </div>
-    </header><main className="main">
+    </header>
+    <main className="main">
         {/* Dashboard goes here */}
         <CommunityPlusDashboard />
-      </main></>
+    </main>
+    </>
   );
 }
 
