@@ -1,8 +1,14 @@
-/* Map container must have explicit size */
+.map-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* take full height of dashboard */
+}
+
 .map-container {
-  width: 100%;         /* take full width of its column */
-  aspect-ratio: 1;     /* keeps the map square */
-  height: auto;        /* height follows from aspect-ratio */
+  flex: 1;              /* grow to fill the column */
+  width: 100%;          /* take full width of column */
+  height: 100%;         /* take full height of column */
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
@@ -13,12 +19,6 @@
   height: calc(100vh - 100px); /* full screen below header */
 }
 
-
-/* Left column: map */
-.map-column {
-  flex: 1;
-  position: relative;
-}
 
 .location-label {
   position: absolute;
