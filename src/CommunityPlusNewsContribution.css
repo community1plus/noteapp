@@ -24,13 +24,10 @@
 
 /* Geolocation text just under logo */
 .geo {
-  font-size: 14px;
-  color: #e7dede;
-  margin-bottom: 0;
-  line-height: 1;
-  padding: 0;
-  gap: 0;
+  font-weight: bold;
+  color: #333;
 }
+
 
 /* ===== Header ===== */
 .header {
@@ -49,39 +46,55 @@
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* ===== Nav Bar ===== */
 .nav-bar {
+  display: flex;
+  justify-content: space-between; /* geo left, links center */
+  align-items: center;
+  padding: 12px 24px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
   position: fixed;
-  top: 80px;   /* sits just below header */
+  top: 80px;      /* directly under your header */
   left: 0;
   width: 100%;
-  background: #fff;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  text-align: center;
-  padding: 12px 0;
-  font-size: 16px;
   z-index: 999;
 }
 
-.nav-bar a {
+.nav-bar .geo {
+  display: inline-block;
+  font-weight: bold;
   color: #333;
+}
+
+.nav-bar .links {
+  display: flex;
+  gap: 12px;                /* space between link groups */
+}
+
+.nav-bar a {
   text-decoration: none;
-  margin: 0 12px;
+  color: #333;
   font-weight: 500;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 .nav-bar a:hover {
   color: #007BFF;
 }
 
-/* ===== Active Link Highlight ===== */
-.nav-bar a.active,
-.nav-bar a[aria-current="page"] {
+.links {
+  flex: 1;
+  text-align: center;
+}
+
+.links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  margin: 0 8px;
+}
+
+.links a:hover {
   color: #007BFF;
-  border-bottom: 2px solid #007BFF;
-  padding-bottom: 2px;
 }
 
 /* ===== Main Content ===== */

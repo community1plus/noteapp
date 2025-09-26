@@ -68,20 +68,20 @@ function CommunityPlusNewsContribution({ user, signOut }) {
     </div>
     </header>
 
-   {/* 🔹 Navigation bar just below the header */}
-    <nav className="nav-bar">
+   <nav className="nav-bar">
       <div className="geo">{location}</div>
-      <a href="/">Home</a> |{" "}
-      <a href="/news">News</a> |{" "}
-      <a href="/events">Events</a> |{" "}
-      <a href="/discussion">Discussion</a> |{" "}
-      <a href="/broadcast">Broadcast</a> |{" "}
-      <a href="/messaging">Messaging</a> |{" "}
-      <a href="/about">About Us</a>
-    </nav>       
+      <div className="links">
+         <a href="/">Home</a>
+         <a href="/news">News</a>
+         <a href="/events">Events</a>
+         <a href="/discussion">Discussion</a>
+         <a href="/broadcast">Broadcast</a>
+         <a href="/messaging">Messaging</a>
+         <a href="/about">About Us</a>
+      </div>
+   </nav>
 
-   
-    <main className="main">
+   <main className="main">
         {/* Dashboard goes here */}
         <CommunityPlusDashboard />
     </main>
