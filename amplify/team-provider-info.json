@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-noteapp-dev-c3b9f-authRole",
+      "UnauthRoleArn": "arn:aws:iam::784434437133:role/amplify-noteapp-dev-c3b9f-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::784434437133:role/amplify-noteapp-dev-c3b9f-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-noteapp-dev-c3b9f-deployment",
+      "UnauthRoleName": "amplify-noteapp-dev-c3b9f-unauthRole",
+      "StackName": "amplify-noteapp-dev-c3b9f",
+      "StackId": "arn:aws:cloudformation:us-east-1:784434437133:stack/amplify-noteapp-dev-c3b9f/f773da00-9b27-11f0-a5d7-0e6c37e75ba3",
+      "AmplifyAppId": "d1de8akhmp483g"
+    },
+    "categories": {
+      "function": {
+        "fbposts": {
+          "deploymentBucketName": "amplify-noteapp-dev-c3b9f-deployment",
+          "s3Key": "amplify-builds/fbposts-41784568706970437242-build.zip"
+        }
+      }
+    }
+  }
+}
