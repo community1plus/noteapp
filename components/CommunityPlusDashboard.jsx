@@ -64,21 +64,22 @@ function CommunityPlusDashboard() {
               />
             </StandaloneSearchBox>
           </div>
-
-          <GoogleMap
-            center={coords}
-            zoom={14}
-            mapContainerClassName="map-container"
-          >
-            <Marker position={coords} />
+          <div>
+            <GoogleMap
+              center={coords}
+              zoom={14}
+              mapContainerClassName="map-container"
+           >
+              <Marker position={coords} />
           </GoogleMap>
+          </div>
         </LoadScript>
 
       </div>
 
       {/* Right column: Feed */}
       <div className="feed-column">
-        <h2>Community News & Events</h2>
+        <div><h2>Community News & Events</h2></div>
         {/* TODO: fetch feed by location */}
         <div className="news-item">📰 Example news headline 1</div>
         <div className="news-item">📰 Example news headline 2</div>
