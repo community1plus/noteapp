@@ -23,7 +23,7 @@
 
 .dashboard {
   display: flex;
-  height: calc(100vh - 100px); /* full screen below header */
+  height: calc(100vh - 80px); /* full screen below header */
 }
 
 
