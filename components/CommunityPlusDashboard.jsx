@@ -79,7 +79,7 @@ function CommunityPlusDashboard() {
 
       {/* Right column: Feed */}
       <div className="feed-column">
-        <div><h2>Community News & Events</h2></div>
+        <div>Community News & Events</div>
         {/* TODO: fetch feed by location */}
         <div className="news-item">📰 Example news headline 1</div>
         <div className="news-item">📰 Example news headline 2</div>
