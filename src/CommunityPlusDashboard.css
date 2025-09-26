@@ -2,7 +2,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  height: 100vh;  /* make the column span full viewport height */
+  height: 100%; /* now relative to dashboard, not full viewport */
 }
 
 .map-container {
