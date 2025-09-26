@@ -55,6 +55,27 @@
   gap: 0;
 }
 
+.nav-bar {
+  background: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 16px;
+}
+
+.nav-bar a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-bar a:hover {
+  color: #007BFF;
+}
+
+
 /* Push content below fixed header */
 .main {
   margin-top: 160px;

@@ -63,10 +63,21 @@ function CommunityPlusNewsContribution({ user, signOut }) {
         .join("")
         .toUpperCase() || "U"}
       </div>
-  <button className="logout" onClick={signOut}>
+    <button className="logout" onClick={signOut}>
     Logout
-  </button>
-</div>
+    </button>
+    </div>
+
+   {/* 🔹 Navigation bar just below the header */}
+    <nav className="nav-bar">
+      <a href="/">Home</a> |{" "}
+      <a href="/news">News</a> |{" "}
+      <a href="/events">Events</a> |{" "}
+      <a href="/discussion">Discussion</a> |{" "}
+      <a href="/broadcast">Broadcast</a> |{" "}
+      <a href="/messaging">Messaging</a> |{" "}
+      <a href="/about">About Us</a>
+    </nav>       
 
     </header>
     <main className="main">
