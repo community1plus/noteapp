@@ -67,6 +67,7 @@ function CommunityPlusNewsContribution({ user, signOut }) {
     Logout
     </button>
     </div>
+    </header>
 
    {/* 🔹 Navigation bar just below the header */}
     <nav className="nav-bar">
@@ -79,7 +80,7 @@ function CommunityPlusNewsContribution({ user, signOut }) {
       <a href="/about">About Us</a>
     </nav>       
 
-    </header>
+   
     <main className="main">
         {/* Dashboard goes here */}
         <CommunityPlusDashboard />
