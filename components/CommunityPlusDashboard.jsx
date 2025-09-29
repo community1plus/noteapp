@@ -80,7 +80,7 @@ function CommunityPlusDashboard() {
 
       {/* Right column: Feed */}
       <div className="feed-column">
-        <div>News</div>
+        <div>Community+ News</div>
         <div>{CommunityPlusFetchfbPosts}</div>
       </div>
     </div>
