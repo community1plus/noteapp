@@ -15,8 +15,11 @@
       "function": {
         "fbposts": {
           "deploymentBucketName": "amplify-noteapp-dev-c3b9f-deployment",
-          "s3Key": "amplify-builds/fbposts-41784568706970437242-build.zip"
+          "s3Key": "amplify-builds/fbposts-7648325641796472386d-build.zip"
         }
+      },
+      "api": {
+        "fbposts": {}
       }
     }
   }

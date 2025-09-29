@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { GoogleMap, LoadScript, Marker, StandaloneSearchBox } from "@react-google-maps/api";
 import "../src/CommunityPlusDashboard.css";
+import CommunityPlusFetchfbPosts from "./CommunityPlusFetchfbPosts";
 
 function CommunityPlusDashboard() {
   const [coords, setCoords] = useState({ lat: -37.8136, lng: 144.9631 }); // default Melbourne
@@ -80,9 +81,7 @@ function CommunityPlusDashboard() {
       {/* Right column: Feed */}
       <div className="feed-column">
         <div>Community News & Events</div>
-        {/* TODO: fetch feed by location */}
-        <div className="news-item">📰 Example news headline 1</div>
-        <div className="news-item">📰 Example news headline 2</div>
+        <div>{CommunityPlusFetchfbPosts}</div>
       </div>
     </div>
   );
