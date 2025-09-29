@@ -4,6 +4,7 @@ import CommunityPlusNewsContribution from "./CommunityPlusNewsContribution";
 import CommunityPlusLandingPage from "./CommunityPlusLandingPage";
 import "@aws-amplify/ui-react/styles.css";
 import "../src/App.css";
+import React from "react";
 
 
 
