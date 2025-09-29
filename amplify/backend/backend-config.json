@@ -31,6 +31,22 @@
         }
       ]
     },
+    "AMPLIFY_function_fbposts_fbPageId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fbposts"
+        }
+      ]
+    },
+    "AMPLIFY_function_fbposts_fbPageToken": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fbposts"
+        }
+      ]
+    },
     "AMPLIFY_function_fbposts_s3Key": {
       "usedBy": [
         {

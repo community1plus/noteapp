@@ -1,3 +1,13 @@
 {
-  "lambdaLayers": []
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "fbPageId",
+      "environmentVariableName": "FB_PAGE_ID"
+    },
+    {
+      "cloudFormationParameterName": "fbPageToken",
+      "environmentVariableName": "FB_PAGE_TOKEN"
+    }
+  ]
 }

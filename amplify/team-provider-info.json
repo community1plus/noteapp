@@ -15,7 +15,9 @@
       "function": {
         "fbposts": {
           "deploymentBucketName": "amplify-noteapp-dev-c3b9f-deployment",
-          "s3Key": "amplify-builds/fbposts-7648325641796472386d-build.zip"
+          "s3Key": "amplify-builds/fbposts-7648325641796472386d-build.zip",
+          "fbPageId": "122113913918986488",
+          "fbPageToken": "EAA8U77NVNc0BPl3rdUt9tMyzYaMK6zgmuSCqs1MrGX4y04QaGDEzSCteZCXJNOxZAq14kHUdp72TNWmEiUIvc42hBOQZBm0suuYEXcrXEGNVJYWhdrZBvyA4o8Mcm2tvw4SJnGzjBYJbeRj0Cv0o0vdVXxh45YBKRnZAwjmubtDtMxNEiXb3ZBLwbtZAioJ9Da6DZBgso5YFpxveFCQSeDyd5ygiNEvRXl5omWdT2VYdux9cEzV3EpUoS0naQs6D8XDoxXiR"
         }
       },
       "api": {
