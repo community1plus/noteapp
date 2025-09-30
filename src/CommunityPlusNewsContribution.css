@@ -75,6 +75,7 @@
   gap: 12px;                /* space between link groups */
   align-items: center;
   justify-content: center;
+  flex: 1;                  /* take all space between geo and profile */
 }
 
 .nav-bar a {
