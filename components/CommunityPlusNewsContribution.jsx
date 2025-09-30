@@ -82,9 +82,14 @@ function CommunityPlusNewsContribution({ user, signOut }) {
    </nav>
 
    <main className="main">
-        {/* Dashboard goes here */}
-        <CommunityPlusDashboard />
-    </main>
+  <div className="map-column">
+    {/* Map here */}
+  </div>
+  <div className="news-column">
+    <CommunityPlusDashboard />
+  </div>
+</main>
+
     </>
   );
 }

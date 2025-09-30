@@ -69,3 +69,20 @@
 .logout:hover {
   background: #b71c1c; /* darker red on hover */
 }
+
+.main {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.map-column {
+  flex: 1;
+}
+
+.news-column {
+  flex: 1;
+}
+.feed-column {
+  flex: 1;
+}
