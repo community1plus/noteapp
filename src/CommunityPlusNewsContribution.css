@@ -22,14 +22,11 @@
 
 }
 
-/* Geolocation text just under logo */
 .geo {
+  flex: 1;               /* take left space */
+  text-align: left;
   font-weight: bold;
-  color: #333;
-  align-items: center;
-  justify-content: center;
 }
-
 
 /* ===== Header ===== */
 .header {
@@ -50,17 +47,13 @@
 
 .nav-bar {
   display: flex;
-  justify-content: space-between; /* geo left, links center */
   align-items: center;
-  padding: 12px 24px;
+  justify-content: space-between; /* space out children */
+  padding: 10px 20px;
   background: #fff;
-  border-bottom: 1px solid #ddd;
-  position: fixed;
-  top: 80px;      /* directly under your header */
-  left: 0;
-  width: 100%;
-  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
 
 .nav-bar .geo {
   display: inline-block;
@@ -84,19 +77,20 @@
 }
 
 .links {
-  flex: 1;
-  text-align: center;
+  flex: 2;               /* give center space */
+  display: flex;
+  justify-content: center; /* center the links */
+  gap: 24px;               /* spacing between links */
 }
 
 .links a {
   text-decoration: none;
-  color: #333;
+  color: #222;
   font-weight: 500;
-  margin: 0 8px;
 }
 
 .links a:hover {
-  color: #007BFF;
+  color: #e11d48; /* COMMUNITY+ accent */
 }
 
 /* ===== Main Content ===== */
