@@ -66,11 +66,13 @@
   display: inline-block;
   font-weight: bold;
   color: #333;
+  align-items: center;
 }
 
 .nav-bar .links {
   display: flex;
   gap: 12px;                /* space between link groups */
+  align-items: center;
 }
 
 .nav-bar a {
