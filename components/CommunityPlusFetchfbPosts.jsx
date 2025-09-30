@@ -10,6 +10,7 @@ export default function CommunityPlusFetchfbPosts() {
       .then((data) => {
         // Facebook returns { data: [...] }
         setPosts(data.data || []);
+        console.log("Fetched posts:", data);
         setLoading(false);
       })
       .catch((err) => {
