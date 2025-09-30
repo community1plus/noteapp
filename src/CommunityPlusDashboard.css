@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   height: 100%; /* now relative to dashboard, not full viewport */
+  padding: 0;
 }
 
 .map-container {
@@ -13,6 +14,7 @@
   border-radius: 8px;
   overflow: hidden;
   display: flex;
+  padding: 0;
 }
 
 #map {
@@ -23,6 +25,7 @@
     #eee 10px,
     #eee 20px
   );
+  padding: 0
 }
 
 
