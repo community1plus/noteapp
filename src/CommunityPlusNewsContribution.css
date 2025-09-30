@@ -42,7 +42,8 @@
   justify-content: center;
   align-items: center;
   background: #cbc9c9; /* light grey */
-  padding: 0 24px;
+  margin-bottom: 0; /* remove spacing below header */
+  padding-bottom: 0;
   border-bottom: 1px solid #ddd;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -55,6 +56,8 @@
   padding: 12px 24px;
   background: #fff;
   border-bottom: 1px solid #ddd;
+  margin-top: 0;    /* remove spacing above nav */
+  padding-top: 0;
   position: fixed;
   top: 80px;      /* directly under your header */
   left: 0;
@@ -68,6 +71,7 @@
   font-weight: bold;
   color: #333;
   align-items: center;
+  padding: 0;
 }
 
 .nav-bar .links {
@@ -76,6 +80,7 @@
   align-items: center;
   justify-content: center;
   flex: 1;                  /* take all space between geo and profile */
+  padding: 0;
 }
 
 .nav-bar a {
