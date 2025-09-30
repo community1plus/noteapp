@@ -70,9 +70,9 @@ function CommunityPlusDashboard() {
               center={coords}
               zoom={14}
               mapContainerClassName="map-container"
-           >
+            >
               <Marker position={coords} />
-          </GoogleMap>
+            </GoogleMap>
           
         </LoadScript>
 
