@@ -71,7 +71,8 @@
   font-weight: bold;
   color: #333;
   align-items: center;
-  padding: 0;
+  margin-top: 0;    /* remove spacing above nav */
+  padding-top: 0;
 }
 
 .nav-bar .links {
@@ -80,7 +81,8 @@
   align-items: center;
   justify-content: center;
   flex: 1;                  /* take all space between geo and profile */
-  padding: 0;
+  margin-top: 0;    /* remove spacing above nav */
+  padding-top: 0;
 }
 
 .nav-bar a {
