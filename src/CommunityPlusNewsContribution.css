@@ -60,6 +60,7 @@
   left: 0;
   width: 100%;
   z-index: 999;
+  margin: 0;
 }
 
 .nav-bar .geo {
@@ -73,6 +74,7 @@
   display: flex;
   gap: 12px;                /* space between link groups */
   align-items: center;
+  justify-content: center;
 }
 
 .nav-bar a {
