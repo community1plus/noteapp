@@ -1,0 +1,39 @@
+.news-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.news-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.news-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.news-message {
+  margin: 8px 0;
+  font-size: 1rem;
+  color: #444;
+}
+
+.news-meta {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.news-link {
+  color: #1a0dab;
+  text-decoration: none;
+}
+
+.news-link:hover {
+  text-decoration: underline;
+}
