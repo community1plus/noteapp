@@ -121,7 +121,7 @@ body, html {
 .main {
   display:flex;
   padding: 0px;
-  height: calc(100vh - 100px); /* viewport height minus header */
+  height: calc(100vh - 140px); /* viewport height minus header */
   max-width: 100vw;  /* don’t spill horizontally */
 }
 
