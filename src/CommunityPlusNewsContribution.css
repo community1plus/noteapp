@@ -162,7 +162,7 @@
 }
 
 .left-column {
-  flex: 2;
+  flex: 1;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -172,6 +172,9 @@
 .right-column {
   flex: 1;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .reserved {
