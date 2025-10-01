@@ -60,7 +60,7 @@ function CommunityPlusDashboard() {
             >
               <input
                 type="text"
-                placeholder="Enter suburb or postcode"
+                placeholder="Enter Address,suburb or postcode"
                 className="location-input"
               />
             </StandaloneSearchBox>

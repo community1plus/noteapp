@@ -65,10 +65,7 @@ function CommunityPlusNewsContribution({ user, signOut }) {
     <button className="logout" onClick={signOut}>
     Logout
     </button>
-    </div>
-    </header>
-
-   <nav className="nav-bar">
+    </div><nav className="nav-bar">
       <div className="geo">{location}</div>
       <div className="links">
          <a href="/">Home</a>
@@ -80,6 +77,10 @@ function CommunityPlusNewsContribution({ user, signOut }) {
          <a href="/about">About Us</a>
       </div>
    </nav>
+
+    </header>
+
+   
 
    <main className="main">
   <div className="map-column">
