@@ -115,7 +115,7 @@
 /* Main wrapper under your header + nav */
 .main {
   display: flex;
-  height: calc(100vh - 80px); /* full viewport minus header+nav height */
+  height: calc(100vh - 140px); /* full viewport minus header+nav height */
   width: 100%;
   margin: 0;
   padding: 0;

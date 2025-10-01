@@ -80,8 +80,6 @@ function CommunityPlusNewsContribution({ user, signOut }) {
 
     </header>
 
-   
-
    <main className="main">
     <CommunityPlusDashboard />
    </main>
