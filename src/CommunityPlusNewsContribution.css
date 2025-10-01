@@ -5,6 +5,7 @@
   width: 100%;
   margin: 0;
   padding: 0;
+  margin-top: 80px; /* space for your fixed header */
 }
 
 .logo-container {
