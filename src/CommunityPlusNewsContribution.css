@@ -113,6 +113,7 @@
 
 /* ===== Main Content ===== */
 .main {
+  display:flex;
   margin-top: 100px; /* header (80px) + nav (80px) */
   padding: 0px;
 }

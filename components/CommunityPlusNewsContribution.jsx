@@ -83,10 +83,8 @@ function CommunityPlusNewsContribution({ user, signOut }) {
    
 
    <main className="main">
-  <div className="news-column">
     <CommunityPlusDashboard />
-  </div>
-</main>
+   </main>
 
     </>
   );
