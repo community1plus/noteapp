@@ -46,7 +46,7 @@ function CommunityPlusDashboard() {
   };
 
   return (
-    <div className="dashboard">
+    <div className="main">
       {/* Left column: Google Map */}
       <div className="map-column">
         <LoadScript
