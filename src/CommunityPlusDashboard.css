@@ -48,6 +48,7 @@
 
 /* Right column: feed */
 .feed-column {
+  display: flex;
   flex: 1;
   padding-top: 0px;
   margin-top: 0px;
@@ -57,6 +58,7 @@
 }
 
 .news-item {
+  display:flex;
   padding: 12px;
   margin-bottom: 10px;
   border-bottom: 1px solid #eee;
