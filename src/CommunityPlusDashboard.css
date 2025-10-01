@@ -32,6 +32,7 @@
 
 .dashboard {
   display: flex;
+  flex-direction: row;
   height: calc(100vh - 80px); /* full screen below header */
 }
 
