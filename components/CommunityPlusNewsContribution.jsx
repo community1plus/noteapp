@@ -83,9 +83,6 @@ function CommunityPlusNewsContribution({ user, signOut }) {
    
 
    <main className="main">
-  <div className="map-column">
-    {/* Map here */}
-  </div>
   <div className="news-column">
     <CommunityPlusDashboard />
   </div>
