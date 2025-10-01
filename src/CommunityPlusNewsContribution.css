@@ -1,3 +1,9 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;   /* ensures 100% height works */
+}
+
 .logo-container {
   display: flex;
   flex-direction: column;
@@ -116,6 +122,9 @@
   display:flex;
   margin-top: 100px; /* header (80px) + nav (80px) */
   padding: 0px;
+  height: calc(100vh - 80px); /* viewport height minus header */
+  max-width: 100vw;  /* don’t spill horizontally */
+  overflow-x: hidden;
 }
 
 .search-box {
