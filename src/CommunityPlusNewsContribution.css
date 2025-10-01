@@ -112,14 +112,7 @@
   color: #007BFF;
 }
 
-/* Main wrapper under your header + nav */
-.main {
-  display: flex;
-  height: calc(100vh - 140px); /* full viewport minus header+nav height */
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
+
 
 .search-box {
   flex: 1;
