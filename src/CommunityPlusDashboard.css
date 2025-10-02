@@ -37,7 +37,6 @@ main {
 .search-bar {
   padding: 10px;
   background: #fafafa;
-  border-bottom: 1px solid #ddd;
   z-index: 10;
 }
 
@@ -52,15 +51,7 @@ main {
   font-size: 14px;
 }
 
-/* Right column: feed */
-.news-feed {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  border-left: 1px solid #ddd;
-  background: #c91414;           /* was red, but use white for news readability */
-  overflow-y: auto;           /* scroll feed independently */
-}
+
 
 
 
