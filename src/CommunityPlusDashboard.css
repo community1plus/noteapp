@@ -1,9 +1,10 @@
 /* Main container under the header */
 main {
+  flex: 1;
+  flex-direction: column;
   display: flex;
   height: calc(100vh - 80px);       /* full viewport */
   margin-top: 80px;    /* push it below the header */
-  width: 100%;
   overflow: hidden;
 }
 
@@ -13,7 +14,8 @@ main {
   flex: 1;
   display: flex;
   flex-direction: row; /* stack search bar on top of map */
-  height: 80vh
+  height: 80vh;
+  width: 100%;
 }
 
 .feed-column {
@@ -21,11 +23,11 @@ main {
   display: flex;
   flex-direction: row; /* stack search bar on top of map */
   height: 80vh;
+  width: 100%;
 }
 
 /* Map container */
 .map-container {
-  flex: 1;          /* fill remaining column height */
   height: 80vh;
   width: 100%;
 }
