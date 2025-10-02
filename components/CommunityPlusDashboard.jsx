@@ -64,7 +64,7 @@ function CommunityPlusDashboard() {
               />
             </StandaloneSearchBox>
           </div>
-          <div>
+          <div className="map-container">
             <GoogleMap
               center={coords}
               zoom={14}

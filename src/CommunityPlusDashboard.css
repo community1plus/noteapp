@@ -35,6 +35,8 @@ main {
 
 /* Search bar inside map column */
 .search-bar {
+  flex: 1;
+  flex-direction: column;
   padding: 10px;
   background: #fafafa;
   z-index: 10;
