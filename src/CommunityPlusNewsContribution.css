@@ -10,6 +10,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0;
+  margin: 0;
 }/* Main wrapper under your header + nav */
 
 
@@ -20,7 +22,6 @@ header {
   justify-content: center;
   align-items: center;
   margin-top: 0;    /* remove spacing above nav */
-  padding: 0;
 }
 
 /* Logo styling */
@@ -32,7 +33,6 @@ header {
   margin: 0;
   justify-content: center;
   align-items: center;
-  padding: 0;
 }
 
 .search-box {
@@ -51,7 +51,6 @@ header {
 .profile {
   display: flex;
   align-items: center;
-  gap: 12px;
 }
 
 .avatar {
@@ -94,6 +93,7 @@ header {
   padding: 0;
   background: #fff;
   padding-top: 0;
+  margin-top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
