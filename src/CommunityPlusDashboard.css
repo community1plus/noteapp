@@ -1,9 +1,9 @@
 
 .main {
   display: flex;
-  height: calc(100vh - 140px); /* full viewport minus header+nav height */
+  height: calc(100vh - 80px); /* full viewport minus header+nav height */
   width: 100%;
-  margin: 10;
+  margin-top: 80px; /* space for your fixed header */
   padding: 10;
   margin-top: 80px; /* space for your fixed header */
 }
