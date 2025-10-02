@@ -9,11 +9,18 @@ main {
 
 /* Left column: map */
 /* Columns */
-.map-column,
+.map-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* stack search bar on top of map */
+  min-width: 0;           /* prevent flexbox from shrinking */
+}
+
 .feed-column {
   flex: 1;
-  width: 100%;
-  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column; /* stack search bar on top of map */
+  min-width: 0;           /* prevent flexbox from shrinking */
 }
 
 /* Map container */
