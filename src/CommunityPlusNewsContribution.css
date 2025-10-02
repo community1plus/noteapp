@@ -8,7 +8,6 @@ header {
   background: #fff;    /* or your theme color */
   z-index: 1000;       /* make sure it sits above the map/news */
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }/* Main wrapper under your header + nav */

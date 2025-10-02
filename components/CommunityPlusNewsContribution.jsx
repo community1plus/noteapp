@@ -45,7 +45,8 @@ function CommunityPlusNewsContribution({ user, signOut }) {
   }, []);
 
   return (
-    <><header className="header">
+    <>
+    <header className="header">
       <div className="logo-container">
         <div className="logo">Community+</div>
       </div>
