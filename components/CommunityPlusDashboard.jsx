@@ -46,7 +46,7 @@ function CommunityPlusDashboard() {
   };
 
   return (
-    <>
+    <main>
       <div className="map-column">
         <LoadScript
           googleMapsApiKey="AIzaSyCPG5QI1XTpFjgcTaDoY_rN5qxR3susJrc"
@@ -81,7 +81,7 @@ function CommunityPlusDashboard() {
       <div className="feed-column">
          <CommunityPlusFetchfbPosts />
       </div>
-   </> 
+   </main> 
   );
 }
 
