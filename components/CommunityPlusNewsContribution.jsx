@@ -54,7 +54,7 @@ function CommunityPlusNewsContribution({ user, signOut }) {
         <input type="text" placeholder="AI Search..." />
       </div>
 
-      <div className="profile">
+      <div className="profile"></div>
       <div className="avatar">
         {user?.username
         ?.split(" ")
@@ -77,9 +77,8 @@ function CommunityPlusNewsContribution({ user, signOut }) {
          <a href="/messaging">Messaging</a>
          <a href="/about">About Us</a>
       </div>
-   </nav>
+    </nav>
     {/* <CommunityPlusDashboard /> */}
-
     </>
   );
 }
