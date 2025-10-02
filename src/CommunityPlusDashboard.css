@@ -1,7 +1,7 @@
 /* Main container under the header */
 .main {
   display: flex;
-  height: 100vh;       /* full viewport */
+  height: calc(100vh - 140px);       /* full viewport */
   margin-top: 80px;    /* push it below the header */
   width: 100%;
   overflow: hidden;
