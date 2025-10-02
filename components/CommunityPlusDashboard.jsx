@@ -64,6 +64,7 @@ function CommunityPlusDashboard() {
               />
             </StandaloneSearchBox>
           </div>
+          <div className="map-container">
             <GoogleMap
               center={coords}
               zoom={14}
@@ -71,7 +72,7 @@ function CommunityPlusDashboard() {
             >
               <Marker position={coords} />
             </GoogleMap>
-          
+          </div>
           
         </LoadScript>
 
