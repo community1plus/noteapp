@@ -4,7 +4,6 @@ main {
   flex-direction: column;
   display: flex;
   height: calc(100vh - 120px);       /* full viewport */
-  margin-top: 80px;    /* push it below the header */
   overflow: hidden;
 }
 
