@@ -51,7 +51,7 @@ header {
   align-items: center;
   padding: 12px 24px;
   background: #fff;
-  margin-top: 0;    /* remove spacing above nav */
+  margin-top: 80;    /* remove spacing above nav */
   padding-top: 0;
   position: fixed;
   left: 0;
