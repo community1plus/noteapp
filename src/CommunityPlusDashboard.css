@@ -4,6 +4,7 @@ main {
   flex-direction: column;
   display: flex;
   height: calc(100vh - 80px);       /* full viewport */
+  width: 100vw;
   margin-top: 80px;    /* push it below the header */
   overflow: hidden;
 }
@@ -13,17 +14,17 @@ main {
 .map-column {
   flex: 1;
   display: flex;
-  flex-direction: row; /* stack search bar on top of map */
-  height: 80vh;
-  width: 100%;
+  flex-direction: column; /* stack search bar on top of map */
+  height: calc(100vh - 80px);
+  width: 50vw;
 }
 
 .feed-column {
   flex: 1;
   display: flex;
-  flex-direction: row; /* stack search bar on top of map */
-  height: 80vh;
-  width: 100%;
+  flex-direction: column;
+  height: calc(100vh - 80px);
+  width: 50vw
 }
 
 /* Map container */
