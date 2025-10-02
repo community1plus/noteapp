@@ -3,7 +3,7 @@ main {
   flex: 1;
   flex-direction: column;
   display: flex;
-  height: calc(100vh - 80px);       /* full viewport */
+  height: calc(100vh - 120px);       /* full viewport */
   width: 100%;
   overflow: hidden;
 }
