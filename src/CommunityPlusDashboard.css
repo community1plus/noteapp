@@ -3,7 +3,7 @@ main {
   flex: 1;
   flex-direction: column;
   display: flex;
-  height: calc(100vh - 80px);       /* full viewport */
+  height: calc(100vh - 120px);       /* full viewport */
   margin-top: 80px;    /* push it below the header */
   overflow: hidden;
 }
@@ -14,19 +14,21 @@ main {
   flex: 1;
   display: flex;
   flex-direction: column; /* stack search bar on top of map */
-  height: calc(100vh - 80px);
+  height: calc(100vh - 120px);
+  width: 100%;
 }
 
 .feed-column {
   flex: 1;
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 120px);
+  width: 100%;
 }
 
 /* Map container */
 .map-container {
-  height: calc(100vh - 80px);
+  height: calc(100vh - 120px);
   width: 100%;
 }
 
