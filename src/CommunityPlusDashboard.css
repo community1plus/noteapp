@@ -17,10 +17,10 @@
   height: 100%;
 }
 
+/* Map container */
 .map-container {
-  flex: 1;         /* let the map grow inside map-column */
-  width: 100%;
-  height: 100%;    /* fill available height */
+  flex: 1;          /* fill remaining column height */
+  height: 100%;     /* ensure map fills */
 }
 
 #map {
@@ -34,9 +34,11 @@
   );
 }
 
+/* Search bar inside map column */
 .search-bar {
-  padding: 8px;
-  background: #fff;
+  padding: 10px;
+  background: #fafafa;
+  border-bottom: 1px solid #ddd;
   z-index: 10;
 }
 
