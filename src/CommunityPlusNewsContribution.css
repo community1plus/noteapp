@@ -103,8 +103,8 @@ header {
   align-items: center;
   padding: 0;
   background: #fff;
-  padding-top: 0;
-  margin-top: 0;
+  position: fixed;
+  top: 80px;               /* just under header */
   left: 0;
   width: 100%;
   z-index: 999;
