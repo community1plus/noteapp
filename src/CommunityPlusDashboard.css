@@ -1,10 +1,11 @@
 /* Main container under the header */
 .main {
   display: flex;
-  height: calc(100vh - 80px);       /* full viewport */
+  height: calc(100vh - 100px);       /* full viewport */
   margin-top: 80px;    /* push it below the header */
   width: 100%;
   overflow: hidden;
+  margin-top: 100px;    /* push it below the header */
 }
 
 /* Left column: map */
@@ -14,12 +15,14 @@
   flex: 1;
   width: 100%;
   height: calc(100vh - 80px);
+  margin-top: 100px;    /* push it below the header */
 }
 
 /* Map container */
 .map-container {
   flex: 1;          /* fill remaining column height */
   height: calc(100vh - 80px);
+  margin-top: 100px;    /* push it below the header */
 }
 
 #map {
