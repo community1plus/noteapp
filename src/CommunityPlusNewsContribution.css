@@ -1,13 +1,24 @@
+/* Main container under the header */
+main {
+  flex: 1;
+  flex-direction: column;
+  display: flex;
+  height: calc(100vh - 80px);       /* full viewport */
+  width: 100%;
+  overflow: hidden;
+}
+
 /* Header */
 header {
   position: fixed;     /* pin to top */
   top: 0;
   left: 0;
   right: 0;
-  height: 120px;        /* your header height */
+  height: 80px;        /* your header height */
   background: #fff;    /* or your theme color */
   z-index: 1000;       /* make sure it sits above the map/news */
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 0;
