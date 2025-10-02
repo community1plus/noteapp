@@ -14,7 +14,7 @@ main {
   display: flex;
   flex-direction: column; /* stack search bar on top of map */
   height: calc(100vh - 120px);
-  width: 100%;
+  width: 50%;
 }
 
 .feed-column {
@@ -22,7 +22,7 @@ main {
   display: flex;
   flex-direction: column;
   height: calc(100vh - 120px);
-  width: 100%;
+  width: 50%;
 }
 
 /* Map container */
