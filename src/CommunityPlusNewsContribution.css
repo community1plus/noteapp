@@ -8,6 +8,7 @@ header {
   background: #fff;    /* or your theme color */
   z-index: 1000;       /* make sure it sits above the map/news */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }/* Main wrapper under your header + nav */
@@ -21,7 +22,6 @@ header {
   align-items: center;
   margin-top: 0;    /* remove spacing above nav */
   padding: 0;
-  gap: 0;
 }
 
 /* Logo styling */
@@ -34,8 +34,50 @@ header {
   justify-content: center;
   align-items: center;
   padding: 0;
-  gap: 0;
+}
 
+.search-box {
+  flex: 1;
+  margin: 0 40px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+/* Profile */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: #eee8e8;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #444;
+}
+
+.logout {
+  padding: 6px 12px;
+  background: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background: #b71c1c;
 }
 
 /* Geolocation text just under logo */
@@ -104,49 +146,6 @@ header {
   color: #007BFF;
 }
 
-.search-box {
-  flex: 1;
-  margin: 0 40px;
-}
-
-.search-box input {
-  width: 100%;
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-}
-
-/* Profile */
-.profile {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.avatar {
-  width: 40px;
-  height: 40px;
-  background: #eee8e8;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  color: #444;
-}
-
-.logout {
-  padding: 6px 12px;
-  background: #d32f2f;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.logout:hover {
-  background: #b71c1c;
-}
 
 .left-column {
   flex: 1;
