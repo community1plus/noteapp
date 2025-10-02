@@ -3,8 +3,8 @@
   display: flex;
   height: calc(100vh - 140px); /* full viewport minus header+nav height */
   width: 100%;
-  margin: 0;
-  padding: 0;
+  margin: 10;
+  padding: 10;
   margin-top: 80px; /* space for your fixed header */
 }
 
