@@ -5,19 +5,12 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* map shouldn't overflow */
-  padding: 0;
-  margin: 0;
 }
 
 .map-container {
-  flex: 1;          /* grow to fill map-column */
+  flex: 1;         /* let the map grow inside map-column */
   width: 100%;
-  height: 100%;     /* fill the parent column */
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-  display: flex;
+  height: 100%;    /* fill available height */
 }
 
 #map {
@@ -29,6 +22,12 @@
     #eee 10px,
     #eee 20px
   );
+}
+
+.search-bar {
+  padding: 8px;
+  background: #fff;
+  z-index: 10;
 }
 
 /* Optional label over the map */
@@ -48,7 +47,7 @@
   display: flex;
   flex-direction: column;
   border-left: 1px solid #ddd;
-  background: #fff;           /* was red, but use white for news readability */
+  background: #c91414;           /* was red, but use white for news readability */
   overflow-y: auto;           /* scroll feed independently */
 }
 
