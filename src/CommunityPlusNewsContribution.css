@@ -50,10 +50,9 @@ header {
   display: flex;
   justify-content: space-between; /* geo left, links center */
   align-items: center;
-  padding: 12px 24px;
+  padding: 0;
   background: #fff;
   padding-top: 0;
-  position: fixed;
   left: 0;
   width: 100%;
   z-index: 999;
