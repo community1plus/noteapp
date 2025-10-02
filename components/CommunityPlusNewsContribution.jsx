@@ -79,7 +79,7 @@ function CommunityPlusNewsContribution({ user, signOut }) {
          <a href="/about">About Us</a>
       </div>
     </nav>
-    {/* <CommunityPlusDashboard /> */}
+    <CommunityPlusDashboard />
     </main>
   );
 }
