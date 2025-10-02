@@ -4,7 +4,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  height: 100px;        /* your header height */
+  height: 120px;        /* your header height */
   background: #fff;    /* or your theme color */
   z-index: 1000;       /* make sure it sits above the map/news */
   display: flex;
