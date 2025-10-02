@@ -52,6 +52,7 @@ header {
 }
 
 .nav-bar {
+  height: 60px;  /* slightly less than header height */
   display: flex;
   justify-content: space-between; /* geo left, links center */
   align-items: center;
