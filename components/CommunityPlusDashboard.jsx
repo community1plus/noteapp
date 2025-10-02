@@ -46,7 +46,7 @@ function CommunityPlusDashboard() {
   };
 
   return (
-    <main>
+    <main className="main">
       <div className="map-column">
         <LoadScript
           googleMapsApiKey="AIzaSyCPG5QI1XTpFjgcTaDoY_rN5qxR3susJrc"
