@@ -1,16 +1,19 @@
 
+/* Main container under the header */
 .main {
   display: flex;
-  height: calc(100vh - 80px); /* full viewport minus header+nav height */
+  height: 100vh;       /* full viewport */
+  margin-top: 80px;    /* push it below the header */
   width: 100%;
+  overflow: hidden;
 }
 
 /* Left column: map */
-.map-column {
+/* Columns */
+.map-column,
+.feed-column {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  background-color: #c91414;
+  overflow-y: auto;   /* scroll independently */
 }
 
 .map-container {

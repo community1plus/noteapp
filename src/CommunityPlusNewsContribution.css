@@ -35,21 +35,20 @@
 
 
 /* ===== Header ===== */
-.header {
-  position: fixed;
+/* Header */
+header {
+  position: fixed;     /* pin to top */
   top: 0;
   left: 0;
-  width: 100%;
-  height: 80px;
+  right: 0;
+  height: 80px;        /* your header height */
+  background: #fff;    /* or your theme color */
+  z-index: 1000;       /* make sure it sits above the map/news */
   display: flex;
-  justify-content: center;
   align-items: center;
-  background: #d5d2d2; /* light grey */
-  margin-bottom: 0; /* remove spacing below header */
-  padding-bottom: 0;
-  border-bottom: 1px solid #ddd;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 1px solid #ddd; /* optional */
 }
 
 .nav-bar {
