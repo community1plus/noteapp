@@ -15,6 +15,16 @@
   width: 100%;
 }
 
+#root {
+  height: 100vh;   /* full viewport height */
+  width: 100vw;    /* full viewport width */
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* stop scrollbars if you want a tight fit */
+  background: #fff; /* or whatever suits your app */
+}
+
+
 a {
   font-weight: 500;
   color: #646cff;
