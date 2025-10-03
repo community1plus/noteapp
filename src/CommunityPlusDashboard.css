@@ -41,9 +41,9 @@ body {
 /* Search bar inside map column */
 .search-bar {
   flex: 1;
-  padding: 10px;
   background: #fafafa;
   z-index: 10;
+  margin: 0px;
 }
 
 /* Optional label over the map */
