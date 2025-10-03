@@ -7,6 +7,8 @@ body {
   flex-direction: row;
   height: calc(100vh - 104px);
   width: 100vw;
+  overflow-x: hidden;                  /* prevent horizontal scroll */
+  overflow-y: hidden;                  /* prevent vertical scroll */
 }
 
 /* Columns */
