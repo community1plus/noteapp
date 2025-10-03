@@ -1,10 +1,16 @@
-
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;    /* remove default margin */
+  padding: 0;  /* space for fixed header */
+}
 
 .main {
   display: flex;
   flex-direction: row;
   height: calc(100vh - 104px);
-  left: 0px
+  top: 104px;               /* just under header */
+  left: 0px;
   width: 100%;
   overflow-x: hidden;                  /* prevent horizontal scroll */
   overflow-y: hidden;                  /* prevent vertical scroll */
@@ -12,23 +18,11 @@
 
 /* Columns */
 .map-column {
-  flex: 1;html {
-  height: 100%;
-  width: 100%;
-  margin: 0;    /* remove default margin */
-  padding: 0;
-}
-
-body {
-  height: 100%;
-  width: 100%;
-  margin: 0;    /* remove default margin */
-  padding: 0;  /* space for fixed header */
-}
+  flex: 1;
   display: flex;
-  background-color: rgb(248, 244, 244);
-  min-width: 0;
-  width: 100%;
+  height: auto;
+  width: auto;
+  margin: 0; 
 }
 
 /* Columns */
@@ -36,8 +30,7 @@ body {
   flex: 1;
   display: flex;
   background-color: rgb(118, 67, 69);
-  min-width: 0;
-  width: 100%;
+  width: auto;
 }
 
 /* Map container */
