@@ -52,18 +52,7 @@ function CommunityPlusDashboard() {
           googleMapsApiKey="AIzaSyCPG5QI1XTpFjgcTaDoY_rN5qxR3susJrc"
           libraries={["places"]}
         >
-          <div className="search-bar">
-            <StandaloneSearchBox
-              onLoad={(ref) => (searchBoxRef.current = ref)}
-              onPlacesChanged={onPlacesChanged}
-            >
-              <input
-                type="text"
-                placeholder="Enter Address,suburb or postcode"
-                className="location-input"
-              />
-            </StandaloneSearchBox>
-          </div>
+          
           <GoogleMap
               center={coords}
               zoom={14}
