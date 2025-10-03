@@ -5,6 +5,7 @@
   height: calc(100vh - 104px);       /* full viewport */
   width: 100%;
   overflow: hidden;
+  margin-top: 104px;           /* push content below fixed header */
 }
 /* Columns */
 .map-column, .feed-column {
