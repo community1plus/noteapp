@@ -70,10 +70,8 @@ function CommunityPlusDashboard() {
               mapContainerClassName="map-container"
             >
               <Marker position={coords} />
-           </GoogleMap>
-          
+           </GoogleMap>        
         </LoadScript>
-
       </div>
 
       {/* Right column: Feed */}
