@@ -24,6 +24,7 @@ function CommunityPlusDashboard() {
               if (data.latitude && data.longitude) {
                 setCoords({ lat: data.latitude, lng: data.longitude });
                 setLocation(`${data.city}, ${data.region}`);
+                console.log("IP-based location:", data);
               } else {
                 setLocation("Location unavailable");
               }
