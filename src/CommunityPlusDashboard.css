@@ -1,5 +1,15 @@
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;    /* remove default margin */
+  padding: 0;
+}
+
 body {
-  padding-top: 104px;   /* leaves space for the fixed header */
+  height: 100%;
+  width: 100%;
+  margin: 0;    /* remove default margin */
+  padding: 104px;  /* space for fixed header */
 }
 
 .main {
