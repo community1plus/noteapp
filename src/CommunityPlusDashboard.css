@@ -1,11 +1,12 @@
-/* Main container under the header */
+body {
+  padding-top: 104px;   /* leaves space for the fixed header */
+}
+
 .main {
   display: flex;
-  height: calc(100vh - 104px);       /* full viewport */
-  width: 100%;
-  overflow: hidden;
-  top: 104px;           /* push content below fixed header */
+  height: calc(100vh - 104px);
 }
+
 /* Columns */
 .map-column {
   flex: 1;
