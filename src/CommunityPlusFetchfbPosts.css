@@ -34,8 +34,11 @@
 }
 
 .news-publisher {
+  display: inline-block;
   font-weight: bold;
   font-size: 0.95rem;
+  width: auto;
+  padding: 1px;
 }
 
 .news-time {
