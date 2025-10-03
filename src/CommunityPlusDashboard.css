@@ -12,6 +12,7 @@
 /* Columns */
 .map-column {
   flex: 1;
+  flex-direction: column;
   display: flex;
   height: auto;
   width: 100%;
