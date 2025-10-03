@@ -1,7 +1,4 @@
-html,body {
-  margin: 0;    /* remove default margin */
-  padding: 0;  /* space for fixed header */
-}
+
 /* Header */
 header {
   position: fixed;     /* pin to top */
