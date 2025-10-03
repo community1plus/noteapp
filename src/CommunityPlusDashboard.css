@@ -1,27 +1,19 @@
 /* Main container under the header */
 main {
   flex: 1;
-  flex-direction: column;
+  flex-direction: row;
   display: flex;
   height: calc(100vh - 120px);       /* full viewport */
   width: 100%;
   overflow: hidden;
 }
 /* Columns */
-.map-column {
+.map-column, .feed-column {
   flex: 1;
   display: flex;
   flex-direction: column; /* stack search bar on top of map */
   height: calc(100vh - 120px);
   background-color: aqua;
-}
-
-.feed-column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 120px);
-  background-color: #b01212;
 }
 
 /* Map container */
