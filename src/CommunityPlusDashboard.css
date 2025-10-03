@@ -9,6 +9,13 @@
   overflow-y: hidden;                  /* prevent vertical scroll */
 }
 
+/* Search bar inside map column */
+.links {
+  flex: 1;
+  background: #fafafa;
+  margin: 1%;
+}
+
 /* Columns */
 .map-column {
   flex: 1;

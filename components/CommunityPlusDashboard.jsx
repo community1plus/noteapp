@@ -48,6 +48,11 @@ function CommunityPlusDashboard() {
 
   return (
     <main className="main">
+      <div className="links">
+         <a href="/">Create News</a>
+         <a href="/news">Create Event</a>
+         <a href="/events">Add OP</a>
+      </div>
       <div className="map-column">
         <LoadScript
           googleMapsApiKey="AIzaSyCPG5QI1XTpFjgcTaDoY_rN5qxR3susJrc"
