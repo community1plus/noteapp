@@ -1,7 +1,3 @@
-html, body {
-  margin: 0;    /* remove default margin */
-  padding: 0;  /* space for fixed header */
-}
 
 .main {
   display: flex;

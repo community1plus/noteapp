@@ -26,6 +26,10 @@ body {
   flex-direction: column; /* app layouts usually stack header/nav + main */
   min-height: 100%;
   overflow-x: hidden;     /* stop sideways scrollbars */
+  background-color: lightblue;            /* so children can layout easily */
+  justify-content: center;    /* center horizontally */
+  align-items: center;        /* center vertically */
+  font-family: Arial, sans-serif;
 }
 
 /* Optional: define CSS variables (custom props) on :root */
