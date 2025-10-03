@@ -1,7 +1,6 @@
 /* Main container under the header */
-main {
+.main {
   flex: 1;
-  flex-direction: column;
   display: flex;
   height: calc(100vh - 120px);       /* full viewport */
   width: 100%;
@@ -11,7 +10,6 @@ main {
 .map-column, .feed-column {
   flex: 1;
   display: flex;
-  height: calc(100vh - 120px);
   background-color: aqua;
 }
 
