@@ -4,8 +4,9 @@
   display: flex;
   flex-direction: column;
   border-left: 1px solid #ddd;
-  background: #c91414;           /* was red, but use white for news readability */
+  background: #ebe8e8;           /* was red, but use white for news readability */
   overflow-y: auto;           /* scroll feed independently */
+  width:auto
 }
 
 .news-card {
