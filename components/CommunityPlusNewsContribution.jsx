@@ -45,7 +45,7 @@ function CommunityPlusNewsContribution({ user, signOut }) {
   }, []);
 
   return (
-    <main className="main">
+    <>
     <header className="header">
       <div className="logo-container">
         <div className="logo">Community+</div>
@@ -80,7 +80,7 @@ function CommunityPlusNewsContribution({ user, signOut }) {
       </div>
     </nav>
     <CommunityPlusDashboard />
-    </main>
+    </>
   );
 }
 
