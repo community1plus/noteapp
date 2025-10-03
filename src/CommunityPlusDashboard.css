@@ -8,10 +8,17 @@
   margin-top: 24px;           /* push content below fixed header */
 }
 /* Columns */
-.map-column, .feed-column {
+.map-column {
   flex: 1;
   display: flex;
   background-color: rgb(255, 0, 13);
+}
+
+/* Columns */
+.feed-column {
+  flex: 1;
+  display: flex;
+  background-color: rgb(118, 67, 69);
 }
 
 /* Map container */
