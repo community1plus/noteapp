@@ -11,7 +11,7 @@ html, body {
   height: calc(100vh - 104px);
   margin-top: 104px;/* just under header */
   left: 0px;
-  width: 100%;
+  width: auto;
   overflow-x: hidden;                  /* prevent horizontal scroll */
   overflow-y: hidden;                  /* prevent vertical scroll */
 }
@@ -42,8 +42,8 @@ html, body {
 .map-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto
 }
 
 #map {
