@@ -36,7 +36,7 @@ export default function CommunityPlusFetchfbPosts() {
               />
             )}
             <div>
-              <div className="news-publisher">{page?.name || "Community+"}</div>
+              <div className="news-publisher">{page?.name || "Community+ " + new Date(post.created_time).toLocaleString()}</div>
               <div className="news-time">
                 {new Date(post.created_time).toLocaleString()}
               </div>

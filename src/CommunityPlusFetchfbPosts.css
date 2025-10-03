@@ -6,7 +6,7 @@
   border-left: 1px solid #ddd;
   background: #ebe8e8;           /* was red, but use white for news readability */
   overflow-y: auto;           /* scroll feed independently */
-  width:auto
+  width: 100%;
 }
 
 .news-card {
@@ -15,7 +15,8 @@
   border-radius: 12px;
   padding: 12px;
   max-width: 600px;
-  margin: 0 auto;
+  width: 90%;
+  margin: 1px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
