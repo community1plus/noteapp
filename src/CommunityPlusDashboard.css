@@ -14,7 +14,7 @@
   flex: 1;
   flex-direction: column;
   display: flex;
-  height: auto;
+  height: 100%;
   width: 100%;
   overflow-x: hidden;                  /* prevent horizontal scroll */
   overflow-y: hidden;                  /* prevent vertical scroll */
@@ -24,8 +24,8 @@
 .feed-column {
   flex: 1;
   display: flex;
-  background-color: rgb(118, 67, 69);
-  width: auto;
+  background-color: rgb(230, 224, 224);
+  width: 100%;
   height: 100%;
   overflow-x: hidden;                  /* prevent horizontal scroll */
   overflow-y: hidden;                  /* prevent vertical scroll */
