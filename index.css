@@ -14,8 +14,8 @@
 }
 
 #root, body, html {
-  height: auto;/* full viewport height */
-  width: auto;/* full viewport width */
+  height: 100vh;   /* full viewport height */
+  width: 100vw;     /* full viewport width */
   margin: 0;
   padding: 0;
   overflow: hidden; /* stop scrollbars if you want a tight fit */
