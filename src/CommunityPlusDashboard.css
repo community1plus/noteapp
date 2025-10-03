@@ -7,13 +7,13 @@ main {
   width: 100%;
   overflow: hidden;
 }
-v/* Columns */
+/* Columns */
 .map-column {
   flex: 1;
   display: flex;
   flex-direction: column; /* stack search bar on top of map */
   height: calc(100vh - 120px);
-  width: 50%;
+  background-color: aqua;
 }
 
 .feed-column {
@@ -21,7 +21,7 @@ v/* Columns */
   display: flex;
   flex-direction: column;
   height: calc(100vh - 120px);
-  width: 50%;
+  background-color: #b01212;
 }
 
 /* Map container */
@@ -34,7 +34,6 @@ v/* Columns */
 }
 
 #map {
-  flex: 1;
   background: repeating-linear-gradient(
     45deg,
     #ddd,
