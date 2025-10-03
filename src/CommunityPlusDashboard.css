@@ -8,7 +8,6 @@ html, body {
   flex-direction: row;
   height: calc(100vh - 104px);
   margin-top: 104px;/* just under header */
-  left: 0px;
   width: auto;
   overflow-x: hidden;                  /* prevent horizontal scroll */
   overflow-y: hidden;                  /* prevent vertical scroll */
@@ -20,7 +19,6 @@ html, body {
   display: flex;
   height: auto;
   width: auto;
-  margin: 0; 
   overflow-x: hidden;                  /* prevent horizontal scroll */
   overflow-y: hidden;                  /* prevent vertical scroll */
 }
