@@ -39,6 +39,7 @@ header {
 .search-box {
   flex: 1;
   margin: 0 40px;
+  width: 100%;
 }
 
 .search-box input {
