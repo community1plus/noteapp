@@ -6,7 +6,6 @@ import "@aws-amplify/ui-react/styles.css";
 import "../src/App.css";
 
 
-
 function App({ signOut, user }) {
   return (
    <BrowserRouter>
