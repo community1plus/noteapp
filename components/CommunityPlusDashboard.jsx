@@ -37,17 +37,7 @@ function CommunityPlusDashboard() {
     }
   }, []);
 
-  // Handle autocomplete place selection
-  const onPlacesChanged = () => {
-    const places = searchBoxRef.current.getPlaces();
-    if (places && places.length > 0) {
-      const place = places[0];
-      const lat = place.geometry.location.lat();
-      const lng = place.geometry.location.lng();
-      setCoords({ lat, lng });
-      setLocation(place.formatted_address);
-    }
-  };
+  
 
   return (
     <main className="main">
@@ -57,18 +47,7 @@ function CommunityPlusDashboard() {
           googleMapsApiKey="AIzaSyCPG5QI1XTpFjgcTaDoY_rN5qxR3susJrc"
           libraries={["places"]}
         >
-          <div className="search-bar">
-            <StandaloneSearchBox
-              onLoad={(ref) => (searchBoxRef.current = ref)}
-              onPlacesChanged={onPlacesChanged}
-            >
-              <input
-                type="text"
-                placeholder="Enter Address,suburb or postcode"
-                className="location-input"
-              />
-            </StandaloneSearchBox>
-          </div>
+          
           <GoogleMap
               center={coords}
               zoom={14}
