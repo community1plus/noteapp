@@ -10,6 +10,7 @@ export default function CommunityPlusFetchfbPosts() {
     fetch("https://dc8bv7xdyf.execute-api.us-east-1.amazonaws.com/dev/fbposts-dev")
       .then((res) => res.json())
       .then((data) => {
+        console.log("FB API Response:", data);  // 👈 check if token expired / error
         setPosts(data.posts || []);
         setPage(data.page || null);
         setLoading(false);
