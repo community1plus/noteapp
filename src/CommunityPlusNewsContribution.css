@@ -23,8 +23,6 @@ header {
   margin-bottom: 0; /* keep it natural inside the header */
   justify-content: center;
   align-items: center;
-  margin-top: 0;    /* remove spacing above nav */
-  padding-top: 10;
 }
 
 /* Logo styling */
@@ -36,7 +34,6 @@ header {
   margin: 0;
   justify-content: center;
   align-items: center;
-  padding: 0;
 }
 
 .search-box {
