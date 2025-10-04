@@ -1,11 +1,11 @@
 import React from "react";
 import "../src/CommunityPlusSidebar.css"; // import the CSS file
-import Auth from "@aws-amplify/auth";
+import { signOut } from "aws-amplify/auth";
 
 export default function CommunityPlusSidebar() {
   const handleSignOut = async () => {
     try {
-      await Auth.signOut();
+      await signOut();
       window.location.reload(); // optional, refresh to reset app state
     } catch (error) {
       console.error("Error signing out: ", error);
