@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../src/CommunityPlusSidebar.css"; // import the CSS file
 import { signOut } from "aws-amplify/auth";
-import CommunityPlusUploadForm from "./CommunityPlusUploadForm"; // <-- import the form
+
 
 export default function CommunityPlusSidebar() {
   const [showModal, setShowModal] = useState(false);
