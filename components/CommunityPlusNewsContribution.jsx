@@ -48,20 +48,20 @@ function CommunityPlusNewsContribution({ user, signOut }) {
     <>
     <header className="header">
       <div className="logo-container">
-        <div className="logo">Community+</div>
+        <div className="avatar">C+</div>
         <div className="search-box">
           <input type="text" placeholder="AI Search..." />
         </div>
 
         <div className="profile"></div>
-        <div className="avatar">
-          {user?.username
-          ?.split(" ")
-          .map(word => word[0])
-          .join("")
-          .toUpperCase() || "U"}
-        </div>
-        <button className="logout" onClick={signOut}>Logout</button>
+          <div className="avatar">
+            {user?.username
+            ?.split(" ")
+            .map(word => word[0])
+            .join("")
+            .toUpperCase() || "U"}
+          </div>
+          <button className="logout" onClick={signOut}>Logout</button>
       </div>
 
     <nav className="nav-bar">
