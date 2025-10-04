@@ -1,6 +1,6 @@
 import React from "react";
 import "../src/CommunityPlusSidebar.css"; // import the CSS file
-import { Auth } from "aws-amplify";
+import Auth from "@aws-amplify/auth";
 
 export default function CommunityPlusSidebar() {
   const handleSignOut = async () => {
