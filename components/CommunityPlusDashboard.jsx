@@ -4,12 +4,6 @@ import "../src/CommunityPlusDashboard.css";
 import CommunityPlusFetchfbPosts from "./CommunityPlusFetchfbPosts";
 import CommunityPlusSideBar from "./CommunityPlusSideBar";
 
-
-import React, { useState, useEffect, useRef } from "react";
-import { GoogleMap, LoadScript, Marker, StandaloneSearchBox } from "@react-google-maps/api";
-import CommunityPlusFetchfbPosts from "./CommunityPlusFetchfbPosts";
-import CommunityPlusSidebar from "./CommunityPlusSidebar"; // <-- import sidebar
-
 function CommunityPlusDashboard() {
   const [coords, setCoords] = useState({ lat: -37.8136, lng: 144.9631 }); // default Melbourne
   const [location, setLocation] = useState("Detecting location...");
@@ -56,7 +50,7 @@ function CommunityPlusDashboard() {
   return (
     <main className="flex h-screen">
       {/* Left column: Sidebar */}
-      <CommunityPlusSidebar />
+      <CommunityPlusSideBar />
 
       {/* Middle column: Map */}
       <div className="flex-1 map-column">
