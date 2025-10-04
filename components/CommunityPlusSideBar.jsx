@@ -20,7 +20,7 @@ export default function CommunityPlusSidebar() {
         <li className="sidebar-item">📅 Add Event</li>
         <li className="sidebar-item">💬 Opinion</li>
         <hr className="sidebar-divider" />
-        <li className="sidebar-item logout" onClick={handleSignOut}>🚪 Logout</li>
+        <li className="sidebar-item" onClick={handleSignOut}>🚪 Logout</li>
       </ul>
     </div>
   );
