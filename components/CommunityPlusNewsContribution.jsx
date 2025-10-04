@@ -47,25 +47,27 @@ function CommunityPlusNewsContribution({ user, signOut }) {
   return (
     <>
     <header className="header">
+      {/* Left: Logo + Search */}
       <div className="logo-container">
         <div className="avatar">C+</div>
         <div className="search-box">
           <input type="text" placeholder="AI Search..." />
-        </div>      
+        </div>
       </div>
 
-    <nav className="nav-bar">
+      {/* Center: Navigation links */}
+      <nav className="links">
+        <a href="/">Home</a>
+        <a href="/news">News</a>
+        <a href="/events">Events</a>
+        <a href="/discussion">Discussion</a>
+        <a href="/broadcast">Broadcast</a>
+        <a href="/messaging">Messaging</a>
+        <a href="/about">About Us</a>
+      </nav>
+
+      {/* Right: Geo location */}
       <div className="geo">{location}</div>
-      <div className="links">
-         <a href="/">Home</a>
-         <a href="/news">News</a>
-         <a href="/events">Events</a>
-         <a href="/discussion">Discussion</a>
-         <a href="/broadcast">Broadcast</a>
-         <a href="/messaging">Messaging</a>
-         <a href="/about">About Us</a>
-      </div>
-    </nav>
     </header>
     
     <CommunityPlusDashboard />
