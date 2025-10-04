@@ -2,6 +2,13 @@ import React, { useState, useEffect, useRef } from "react";
 import { GoogleMap, LoadScript, Marker, StandaloneSearchBox } from "@react-google-maps/api";
 import "../src/CommunityPlusDashboard.css";
 import CommunityPlusFetchfbPosts from "./CommunityPlusFetchfbPosts";
+import CommunityPlusSideBar from "./CommunityPlusSideBar";
+
+
+import React, { useState, useEffect, useRef } from "react";
+import { GoogleMap, LoadScript, Marker, StandaloneSearchBox } from "@react-google-maps/api";
+import CommunityPlusFetchfbPosts from "./CommunityPlusFetchfbPosts";
+import CommunityPlusSidebar from "./CommunityPlusSidebar"; // <-- import sidebar
 
 function CommunityPlusDashboard() {
   const [coords, setCoords] = useState({ lat: -37.8136, lng: 144.9631 }); // default Melbourne
@@ -47,13 +54,12 @@ function CommunityPlusDashboard() {
   };
 
   return (
-    <main className="main">
-      <div className="links">
-         <a href="/">Create News</a>
-         <a href="/news">Create Event</a>
-         <a href="/events">Add OP</a>
-      </div>
-      <div className="map-column">
+    <main className="flex h-screen">
+      {/* Left column: Sidebar */}
+      <CommunityPlusSidebar />
+
+      {/* Middle column: Map */}
+      <div className="flex-1 map-column">
         <LoadScript
           googleMapsApiKey="AIzaSyCPG5QI1XTpFjgcTaDoY_rN5qxR3susJrc"
           libraries={["places"]}
@@ -65,26 +71,26 @@ function CommunityPlusDashboard() {
             >
               <input
                 type="text"
-                placeholder="Enter Address,suburb or postcode"
+                placeholder="Enter Address, suburb or postcode"
                 className="location-input"
               />
             </StandaloneSearchBox>
           </div>
           <GoogleMap
-              center={coords}
-              zoom={14}
-              mapContainerClassName="map-container"
-            >
-              <Marker position={coords} />
-           </GoogleMap>        
+            center={coords}
+            zoom={14}
+            mapContainerClassName="map-container"
+          >
+            <Marker position={coords} />
+          </GoogleMap>
         </LoadScript>
       </div>
 
       {/* Right column: Feed */}
-      <div className="feed-column">
-         <CommunityPlusFetchfbPosts />
+      <div className="w-80 feed-column border-l border-gray-200 p-4 overflow-y-auto">
+        <CommunityPlusFetchfbPosts />
       </div>
-   </main> 
+    </main>
   );
 }
 
