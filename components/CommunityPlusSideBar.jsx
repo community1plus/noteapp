@@ -6,7 +6,8 @@ import CommunityPlusUploadForm from "./CommunityPlusUploadForm";
 export default function CommunityPlusSidebar() {
   const [showModal, setShowModal] = useState(false);
   const [activeTab, setActiveTab] = useState("upload");
-  const [uploadedFiles, setUploadedFiles] = useState([]); // store uploaded files
+  const [uploadedFiles, setUploadedFiles] = useState([]);
+  const [uploadCategory, setUploadCategory] = useState("news"); // track which type
 
   const handleSignOut = async () => {
     try {
@@ -17,15 +18,25 @@ export default function CommunityPlusSidebar() {
     }
   };
 
+  const openModal = (category) => {
+    setUploadCategory(category);
+    setActiveTab("upload");
+    setShowModal(true);
+  };
+
   return (
     <div className="sidebar">
       {/* Sidebar menu */}
       <ul className="sidebar-menu">
-        <li className="sidebar-item" onClick={() => setShowModal(true)}>
+        <li className="sidebar-item" onClick={() => openModal("news")}>
           ➕ Add News
         </li>
-        <li className="sidebar-item">📅 Add Event</li>
-        <li className="sidebar-item">💬 Opinion</li>
+        <li className="sidebar-item" onClick={() => openModal("event")}>
+          📅 Add Event
+        </li>
+        <li className="sidebar-item" onClick={() => openModal("opinion")}>
+          💬 Opinion
+        </li>
         <hr className="sidebar-divider" />
         <li className="sidebar-item" onClick={handleSignOut}>
           🚪 Logout
@@ -69,10 +80,10 @@ export default function CommunityPlusSidebar() {
             <div className="modal-body">
               {activeTab === "upload" && (
                 <CommunityPlusUploadForm
+                  category={uploadCategory}   // pass category into the form
                   onSubmit={(formData) => {
                     console.log("Uploaded:", formData);
 
-                    // formData should include files, update state
                     if (formData.files) {
                       setUploadedFiles(Array.from(formData.files));
                     }
@@ -83,7 +94,7 @@ export default function CommunityPlusSidebar() {
 
               {activeTab === "preview" && (
                 <div className="preview-container">
-                  <h3>Preview</h3>
+                  <h3>Preview ({uploadCategory})</h3>
                   {uploadedFiles.length === 0 ? (
                     <p>No files uploaded yet.</p>
                   ) : (
@@ -118,14 +129,14 @@ export default function CommunityPlusSidebar() {
 
               {activeTab === "submit" && (
                 <div>
-                  <h3>Submit</h3>
+                  <h3>Submit ({uploadCategory})</h3>
                   <p>Final review and confirmation step.</p>
                   <button
                     className="submit-btn"
                     onClick={() => {
                       console.log("Submitted successfully!");
                       setShowModal(false);
-                      setUploadedFiles([]); // clear after submission
+                      setUploadedFiles([]);
                     }}
                   >
                     ✅ Submit
