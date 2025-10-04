@@ -23,6 +23,7 @@ header {
   margin-bottom: 0; /* keep it natural inside the header */
   justify-content: center;
   align-items: center;
+  width: 100%
 }
 
 /* Logo styling */
