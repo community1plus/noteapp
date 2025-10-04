@@ -125,14 +125,14 @@
 .modal-content {
   background: #fff;
   border-radius: 12px;
-  width: 600px;           /* modal width */
-  max-width: 90%;         /* responsive */
+  width: 600px;
+  max-width: 90%;
   max-height: 80%;
   overflow-y: auto;
-  padding: 20px;
+  padding: 24px;
   position: relative;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
-  animation: scaleIn 0.2s ease;
+  border-right: 4px solid #4285f4; /* subtle right border highlight */
 }
 
 .modal-close {
@@ -167,6 +167,14 @@
   padding-bottom: 8px;
 }
 
+.modal-tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+}
+
 .modal-tabs .tab {
   flex: 1;
   text-align: center;
@@ -184,6 +192,7 @@
 .modal-body {
   margin-top: 12px;
 }
+
 
 .form-field {
   margin-bottom: 16px;

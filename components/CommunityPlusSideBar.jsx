@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import "../src/CommunityPlusSidebar.css";
 import { signOut } from "aws-amplify/auth";
-import CommunityPlusUploadForm from "./CommunityPlusUploadForm";
 
 export default function CommunityPlusSidebar() {
   const [showModal, setShowModal] = useState(false);
   const [activeTab, setActiveTab] = useState("upload");
   const [uploadedFiles, setUploadedFiles] = useState([]);
-  const [uploadCategory, setUploadCategory] = useState("news"); // track which type
+  const [uploadCategory, setUploadCategory] = useState("news");
 
   const handleSignOut = async () => {
     try {
@@ -79,17 +78,38 @@ export default function CommunityPlusSidebar() {
             {/* Tab content */}
             <div className="modal-body">
               {activeTab === "upload" && (
-                <CommunityPlusUploadForm
-                  category={uploadCategory}   // pass category into the form
-                  onSubmit={(formData) => {
-                    console.log("Uploaded:", formData);
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    const formData = new FormData(e.target);
 
-                    if (formData.files) {
-                      setUploadedFiles(Array.from(formData.files));
-                    }
+                    // grab files for preview
+                    const files = formData.getAll("files");
+                    setUploadedFiles(files);
+
+                    console.log("Form Data:", Object.fromEntries(formData));
                     setActiveTab("preview");
                   }}
-                />
+                >
+                  <div className="form-field">
+                    <label htmlFor="title">Title</label>
+                    <input type="text" id="title" name="title" required />
+                  </div>
+
+                  <div className="form-field">
+                    <label htmlFor="blurb">Blurb</label>
+                    <textarea id="blurb" name="blurb" rows="3" required />
+                  </div>
+
+                  <div className="form-field">
+                    <label htmlFor="files">Upload File</label>
+                    <input type="file" id="files" name="files" multiple />
+                  </div>
+
+                  <button type="submit" className="submit-btn">
+                    Continue →
+                  </button>
+                </form>
               )}
 
               {activeTab === "preview" && (
