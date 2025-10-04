@@ -53,14 +53,13 @@ function CommunityPlusNewsContribution({ user, signOut }) {
           <input type="text" placeholder="AI Search..." />
         </div>
 
-        <div className="profile"></div>
-          <div className="avatar">
+        <div className="avatar">
             {user?.username
             ?.split(" ")
             .map(word => word[0])
             .join("")
             .toUpperCase() || "U"}
-          </div>
+        </div>
           <button className="logout" onClick={signOut}>Logout</button>
       </div>
 
