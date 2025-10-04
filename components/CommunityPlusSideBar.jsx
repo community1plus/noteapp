@@ -12,10 +12,15 @@ export default function CommunityPlusSidebar() {
 
       {/* Menu */}
       <ul className="sidebar-menu">
-        <li className="sidebar-item">➕ Add News</li>
-        <li className="sidebar-item">📅 Add Event</li>
-        <li className="sidebar-item">💬 Opinion</li>
-      </ul>
+  <li className="sidebar-item">➕ Add News</li>
+  <li className="sidebar-item">📅 Add Event</li>
+  <li className="sidebar-item">💬 Opinion</li>
+
+  <hr className="sidebar-divider" />
+
+  <li className="sidebar-item logout" onClick={signOut}>🚪 Logout</li>
+</ul>
+
     </div>
   );
 }

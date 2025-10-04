@@ -52,3 +52,14 @@
 .sidebar-item:hover {
   background-color: #ececec;
 }
+
+.sidebar-divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 8px 0;
+}
+
+.sidebar-item.logout {
+  color: #e3342f; /* red for emphasis */
+  font-weight: bold;
+}
