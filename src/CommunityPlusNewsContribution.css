@@ -68,3 +68,42 @@
   flex: 1;
   text-align: right;
 }
+
+.google-search {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 24px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+  padding: 0 12px;
+}
+
+.google-search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 0 8px;
+}
+
+.google-search .icon {
+  cursor: pointer;
+  margin: 0 4px;
+  font-size: 18px;
+  color: #666;
+}
+
+/* subtle hover */
+.google-search .icon:hover {
+  color: #000;
+}
+
+.google-search input:focus {
+  border: none;
+  outline: none;
+}

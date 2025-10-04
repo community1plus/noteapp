@@ -50,9 +50,16 @@ function CommunityPlusNewsContribution({ user, signOut }) {
       {/* Left: Logo + Search */}
       <div className="logo-container">
         <div className="avatar">C+</div>
-        <div className="search-box">
-          <input type="text" placeholder="AI Search..." />
+        
+
+        <div className="google-search">
+          <span className="icon search">🔍</span>
+          <input type="text" placeholder="Search..." />
+          <span className="icon clear">❌</span>
+          <span className="icon mic">🎤</span>
+          <span className="icon lens">📷</span>
         </div>
+
       </div>
 
       {/* Center: Navigation links */}
