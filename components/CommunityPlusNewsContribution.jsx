@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CommunityPlusDashboard from "./CommunityPlusDashboard";
 import "../src/CommunityPlusNewsContribution.css";
+import GoogleStyleSearch from "./GoogleStyleSearch";
 
 function CommunityPlusNewsContribution({ user, signOut }) {
   const [location, setLocation] = useState("Fetching location...");
@@ -50,16 +51,7 @@ function CommunityPlusNewsContribution({ user, signOut }) {
       {/* Left: Logo + Search */}
       <div className="logo-container">
         <div className="avatar">C+</div>
-        
-
-        <div className="google-search">
-          <span className="icon search">🔍</span>
-          <input type="text" placeholder="Search..." />
-          <span className="icon clear">❌</span>
-          <span className="icon mic">🎤</span>
-          <span className="icon lens">📷</span>
-        </div>
-
+        <GoogleStyleSearch/>
       </div>
 
       {/* Center: Navigation links */}
