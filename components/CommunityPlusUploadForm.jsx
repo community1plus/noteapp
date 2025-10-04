@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../src/CommunityPlusUploadForm.css";
 
 export default function CommunityPlusUploadForm({ onSubmit }) {
   const [title, setTitle] = useState("");
