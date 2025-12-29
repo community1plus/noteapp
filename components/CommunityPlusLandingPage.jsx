@@ -19,9 +19,9 @@ function CommunityPlusLandingPage({ user }) {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
-      <h1 onClick={handleCommunityClick} className="text-5xl font-bold mb-8">COMMUNITY+</h1>
+      <h1 onClick={handleCommunityClick} className="text-5xl font-bold mb-8">community.one</h1>
       <p className="text-lg text-gray-600 mb-10">
-        Stay updated with your local community news and events.
+        Hyperlocal Real-time content streaming. News. Video. Audio. Chat. Collaboration.
       </p>
     </div>
   );
