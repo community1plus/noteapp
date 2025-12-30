@@ -13,16 +13,46 @@ function CommunityPlusLandingPage({ user }) {
   }, [user, navigate]);
 
   const handleCommunityClick = () => {
-    // Send everyone to /main — Authenticator at App level protects it
     navigate("/main");
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
-      <h1 onClick={handleCommunityClick} className="text-5xl font-bold mb-8">community.one</h1>
-      <p className="text-lg text-gray-600 mb-10">
-        Hyperlocal Real-time content streaming. News. Video. Audio. Chat. Collaboration.
-      </p>
+    <div className="landing-container">
+      
+      {/* Main centered content */}
+      <div className="main-content">
+        <div>
+          <h1
+            className="title"
+            onClick={handleCommunityClick}
+            style={{ cursor: "pointer" }}
+          >
+            community.one
+          </h1>
+
+          <p className="subtitle">
+            Hyperlocal Real-time content streaming. News. Video. Audio. Chat. Collaboration.
+          </p>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className="footer">
+        <div className="footer-left">
+          © {new Date().getFullYear()} community.one
+        </div>
+
+        <div className="footer-center">
+          Built for local communities
+        </div>
+
+        <div className="footer-right">
+          <a href="/about">About</a>
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+        </div>
+      </footer>
+
     </div>
   );
 }
