@@ -28,13 +28,13 @@ export default function CommunityPlusSidebar() {
       {/* Sidebar menu */}
       <ul className="sidebar-menu">
         <li className="sidebar-item" onClick={() => openModal("news")}>
-          ➕ Add News
+          ➕ News
         </li>
         <li className="sidebar-item" onClick={() => openModal("event")}>
-          📅 Add Event
+          📅 Event
         </li>
         <li className="sidebar-item" onClick={() => openModal("opinion")}>
-          💬 Opinion
+          💬 Messaging
         </li>
         <hr className="sidebar-divider" />
         <li className="sidebar-item" onClick={handleSignOut}>
