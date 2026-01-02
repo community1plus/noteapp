@@ -1,28 +1,42 @@
+/* =========================
+   HEADER (two rows, fixed)
+   ========================= */
 
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 80px;
   background: #fff;
   border-bottom: 1px solid #ddd;
   z-index: 1000;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
+  flex-direction: column; /* two rows */
   box-sizing: border-box;
 }
 
-/* Logo + Search (left) */
+/* =========================
+   TOP ROW: Avatar + Search + Geo
+   ========================= */
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  gap: 16px;
+}
+
+/* Left: avatar + search */
 .logo-container {
   display: flex;
   align-items: center;
   gap: 12px;
   flex: 1;
+  min-width: 0; /* allows search to expand */
 }
 
+/* Perfect round avatar */
 .avatar {
   width: 40px;
   height: 40px;
@@ -33,22 +47,65 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
-.search-box input {
-  width: 220px;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  padding: 6px 12px;
-  font-size: 14px;
+/* Search expands to fill available space */
+.search-wrapper {
+  flex: 1;
+  min-width: 0;
 }
 
-/* Center navigation links */
+/* =========================
+   GOOGLE-STYLE SEARCH
+   ========================= */
+
+.google-search {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 24px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+.google-search input {
+  flex: 1;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 0 8px;
+  background: transparent;
+}
+
+/* =========================
+   RIGHT: LOCATION
+   ========================= */
+
+.geo {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* =========================
+   BOTTOM ROW: NAVIGATION
+   ========================= */
+
 .links {
   display: flex;
-  gap: 20px;
-  flex: 2;
+  gap: 24px;
   justify-content: center;
+  padding: 10px 20px;
+  border-top: 1px solid #f0f0f0;
+  font-size: 14px;
 }
 
 .links a {
@@ -59,51 +116,4 @@
 
 .links a:hover {
   color: #e3342f;
-}
-
-/* Right: location text */
-.geo {
-  font-weight: bold;
-  color: #333;
-  flex: 1;
-  text-align: right;
-}
-
-.google-search {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 24px;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
-  padding: 0 12px;
-}
-
-.google-search input {
-  flex: 1;
-  border: none;
-  outline: none;
-  font-size: 16px;
-  padding: 0 8px;
-}
-
-.google-search .icon {
-  cursor: pointer;
-  margin: 0 4px;
-  font-size: 18px;
-  color: #666;
-}
-
-/* subtle hover */
-.google-search .icon:hover {
-  color: #000;
-}
-
-.google-search input:focus {
-  border: none;
-  outline: none;
 }
