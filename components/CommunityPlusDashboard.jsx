@@ -4,8 +4,6 @@ import "../src/CommunityPlusDashboard.css";
 import CommunityPlusFetchfbPosts from "./CommunityPlusFetchfbPosts";
 import CommunityPlusSideBar from "./CommunityPlusSideBar";
 
-
-
 function CommunityPlusDashboard() {
   const [coords, setCoords] = useState({ lat: -37.8136, lng: 144.9631 }); // default Melbourne
   const [location, setLocation] = useState("Detecting location...");
