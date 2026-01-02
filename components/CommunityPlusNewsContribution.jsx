@@ -13,10 +13,7 @@ function CommunityPlusNewsContribution({ user, signOut }) {
           const { latitude, longitude } = pos.coords;
           setLocation(`Lat: ${latitude.toFixed(4)}, Lon: ${longitude.toFixed(4)}`);
         },
-        (err) => {
-          console.warn("Geolocation failed, falling back to IP:", err);
-
-          // 🔹 Fallback to IP-based geolocation
+        () => {
           fetch("https://ipapi.co/json/")
             .then((res) => res.json())
             .then((data) => {
@@ -27,49 +24,46 @@ function CommunityPlusNewsContribution({ user, signOut }) {
               }
             })
             .catch(() => setLocation("Location unavailable"));
-        },
-        { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }
+        }
       );
-    } else {
-      // If geolocation not supported, fallback to IP
-      fetch("https://ipapi.co/json/")
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.city && data.region) {
-            setLocation(`${data.city}, ${data.region}`);
-          } else {
-            setLocation("Location unavailable");
-          }
-        })
-        .catch(() => setLocation("Location unavailable"));
     }
   }, []);
 
   return (
     <>
-    <header className="header">
-      {/* Left: Logo + Search */}
-      <div className="logo-container">
-        <div className="avatar">C</div>
-        <GoogleStyleSearch/>
-      </div>
+      <header className="header">
 
-      {/* Center: Navigation links */}
-      <nav className="links">
-        <a href="/">Home</a>
-        <a href="/news">News</a>
-        <a href="/events">Events</a>
-        <a href="/broadcast">Search</a>
-        <a href="/discussion">Incidents</a>
-      <a href="/broadcast">Community+</a>
-        <a href="/about">About</a>
-      </nav>
+        {/* TOP ROW */}
+        <div className="header-top">
 
-      {/* Right: Geo location */}
-      <div className="geo">{location}</div>
-    </header>
-    
-    <CommunityPlusDashboard />
+          {/* Left: Avatar + Search */}
+          <div className="logo-container">
+            <div className="avatar">C</div>
+
+            {/* Search fills available space */}
+            <div className="search-wrapper">
+              <GoogleStyleSearch />
+            </div>
+          </div>
+
+          {/* Right: Geo location */}
+          <div className="geo">{location}</div>
+        </div>
+
+        {/* BOTTOM ROW: Navigation */}
+        <nav className="links">
+          <a href="/">Home</a>
+          <a href="/news">News</a>
+          <a href="/events">Events</a>
+          <a href="/incidents">Incidents</a>
+          <a href="/search">Search</a>
+          <a href="/community">Community+</a>
+          <a href="/about">About</a>
+        </nav>
+
+      </header>
+
+      <CommunityPlusDashboard />
     </>
   );
 }
