@@ -50,7 +50,7 @@ function CommunityPlusNewsContribution({ user, signOut }) {
     <header className="header">
       {/* Left: Logo + Search */}
       <div className="logo-container">
-        <div className="avatar">C+</div>
+        <div className="avatar">C</div>
         <GoogleStyleSearch/>
       </div>
 
@@ -59,10 +59,10 @@ function CommunityPlusNewsContribution({ user, signOut }) {
         <a href="/">Home</a>
         <a href="/news">News</a>
         <a href="/events">Events</a>
-        <a href="/discussion">Discussion</a>
-        <a href="/broadcast">Broadcast</a>
-        <a href="/messaging">Messaging</a>
-        <a href="/about">About Us</a>
+        <a href="/broadcast">Search</a>
+        <a href="/discussion">Incidents</a>
+      <a href="/broadcast">Community+</a>
+        <a href="/about">About</a>
       </nav>
 
       {/* Right: Geo location */}
