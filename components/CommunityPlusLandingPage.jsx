@@ -25,6 +25,7 @@ function CommunityPlusLandingPage({ user }) {
           <h1
             className="title"
             onClick={handleCommunityClick}
+            style={{ cursor: "pointer" }}
           >
             community.one
           </h1>
@@ -35,17 +36,8 @@ function CommunityPlusLandingPage({ user }) {
         </div>
       </div>
 
-      {/* Footer */}
+      {/* Footer (clean, no search) */}
       <footer className="footer">
-
-        {/* ChatGPT-style search box */}
-          <div className="footer-search">
-            <input
-              type="text"
-              className="search-input"
-              placeholder="Search community.one…"
-            />
-          </div>
         <div className="footer-left">
           © {new Date().getFullYear()} community.one
         </div>
@@ -54,21 +46,13 @@ function CommunityPlusLandingPage({ user }) {
           Built for local communities
         </div>
 
-        {/* RIGHT footer column becomes vertical */}
-        <div className="footer-right footer-right-column">
-
-          {/* existing links */}
-          <div className="footer-links">
-            <a href="/about">About</a>
-            <a href="/privacy">Privacy</a>
-            <a href="/terms">Terms</a>
-          </div>
-
-          
-
+        <div className="footer-right">
+          <a href="/about">About</a>
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
         </div>
-
       </footer>
+
     </div>
   );
 }
