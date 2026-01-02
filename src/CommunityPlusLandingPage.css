@@ -58,3 +58,40 @@
 .footer-right a:hover {
   text-decoration: underline;
 }
+
+/* Make right footer column vertical */
+.footer-right-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Footer links row */
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+/* Search container at bottom-right */
+.footer-search {
+  width: 260px;
+}
+
+/* ChatGPT-style search input */
+.search-input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Focus state */
+.search-input:focus {
+  border-color: red;
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.15);
+}

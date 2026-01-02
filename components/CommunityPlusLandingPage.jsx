@@ -38,6 +38,14 @@ function CommunityPlusLandingPage({ user }) {
       {/* Footer */}
       <footer className="footer">
 
+        {/* ChatGPT-style search box */}
+          <div className="footer-search">
+            <input
+              type="text"
+              className="search-input"
+              placeholder="Search community.one…"
+            />
+          </div>
         <div className="footer-left">
           © {new Date().getFullYear()} community.one
         </div>
@@ -56,14 +64,7 @@ function CommunityPlusLandingPage({ user }) {
             <a href="/terms">Terms</a>
           </div>
 
-          {/* ChatGPT-style search box */}
-          <div className="footer-search">
-            <input
-              type="text"
-              className="search-input"
-              placeholder="Search community.one…"
-            />
-          </div>
+          
 
         </div>
 
