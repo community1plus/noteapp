@@ -16,7 +16,7 @@ function App({ signOut, user }) {
 
         <Route path="/posts"
         
-          element={<CommunityPlusContentpage user={user} signOut={signOut} />}
+          element={<CommunityPlusContentPage user={user} signOut={signOut} />}
         />
 
         {/* OAuth Callback & Landing page after login */}
