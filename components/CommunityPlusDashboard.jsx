@@ -1,21 +1,24 @@
-import React, { useState, useEffect, useRef } from "react";
-import { GoogleMap, LoadScript, Marker, StandaloneSearchBox } from "@react-google-maps/api";
-import "../src/CommunityPlusDashboard.css";
-import CommunityPlusFetchfbPosts from "./CommunityPlusFetchfbPosts";
+import React, { useState, useEffect } from "react";
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+
+import CommunityPlusHeader from "./CommunityPlusHeader";
 import CommunityPlusSideBar from "./CommunityPlusSideBar";
+import CommunityPlusFetchfbPosts from "./CommunityPlusFetchfbPosts";
 
-function CommunityPlusDashboard() {
-  const [coords, setCoords] = useState({ lat: -37.8136, lng: 144.9631 }); // default Melbourne
-  const [location, setLocation] = useState("Detecting location...");
+import "../src/CommunityPlusDashboard.css";
 
-  // Try geolocation + IP fallback
+function CommunityPlusDashboard({ user, signOut }) {
+  const [coords, setCoords] = useState({ lat: -37.8136, lng: 144.9631 });
+  const [activeView, setActiveView] = useState("dashboard"); // default
+
   useEffect(() => {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
         (pos) => {
-          const { latitude, longitude } = pos.coords;
-          setCoords({ lat: latitude, lng: longitude });
-          setLocation(`Lat: ${latitude.toFixed(4)}, Lon: ${longitude.toFixed(4)}`);
+          setCoords({
+            lat: pos.coords.latitude,
+            lng: pos.coords.longitude,
+          });
         },
         () => {
           fetch("https://ipapi.co/json/")
@@ -23,10 +26,6 @@ function CommunityPlusDashboard() {
             .then((data) => {
               if (data.latitude && data.longitude) {
                 setCoords({ lat: data.latitude, lng: data.longitude });
-                setLocation(`${data.city}, ${data.region}`);
-                console.log("IP-based location:", data);
-              } else {
-                setLocation("Location unavailable");
               }
             });
         }
@@ -34,32 +33,46 @@ function CommunityPlusDashboard() {
     }
   }, []);
 
-  
-
   return (
-    <main className="main">
-      <div><CommunityPlusSideBar /></div>
-      <div className="map-column">
-        <LoadScript
-          googleMapsApiKey="AIzaSyCPG5QI1XTpFjgcTaDoY_rN5qxR3susJrc"
-          libraries={["places"]}
-        >
-          
-          <GoogleMap
-              center={coords}
-              zoom={14}
-              mapContainerClassName="map-container"
-            >
-              <Marker position={coords} />
-           </GoogleMap>        
-        </LoadScript>
-      </div>
+    <div className="dashboard-container">
+      {/* HEADER */}
+      <CommunityPlusHeader
+        user={user}
+        signOut={signOut}
+        setActiveView={setActiveView}
+      />
 
-      {/* Right column: Feed */}
-      <div className="feed-column">
-         
-      </div>
-   </main> 
+      {/* BODY */}
+      <main className="main">
+        {/* SIDEBAR */}
+        <CommunityPlusSideBar setActiveView={setActiveView} />
+
+        {/* MAIN CONTENT */}
+        <div className="content-area">
+          {activeView === "dashboard" && (
+            <div className="map-column">
+              <LoadScript
+                googleMapsApiKey="AIzaSyCPG5QI1XTpFjgcTaDoY_rN5qxR3susJrc"
+                libraries={["places"]}
+              >
+                <GoogleMap
+                  center={coords}
+                  zoom={14}
+                  mapContainerClassName="map-container"
+                >
+                  <Marker position={coords} />
+                </GoogleMap>
+              </LoadScript>
+            </div>
+          )}
+
+          {activeView === "posts" && <CommunityPlusFetchfbPosts />}
+
+          {/* Add more views later */}
+          {/* {activeView === "events" && <Events />} */}
+        </div>
+      </main>
+    </div>
   );
 }
 
