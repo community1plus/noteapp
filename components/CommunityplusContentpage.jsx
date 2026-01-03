@@ -1,6 +1,6 @@
 // CommunityplusContentpage.jsx
 import React from "react";
-import "../components/CommunityPlusContentpage.css"
+import "../src/CommunityPlusContentpage.css"
 
 
 export default function CommunityplusContentpage() {
