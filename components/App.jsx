@@ -1,40 +1,14 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { withAuthenticator, Authenticator } from "@aws-amplify/ui-react";
-import CommunityPlusContentPage from "./CommunityPlusContentPage";
-import CommunityPlusNewsContribution from "./CommunityPlusNewsContribution";
-import CommunityPlusLandingPage from "./CommunityPlusLandingPage";
 import "@aws-amplify/ui-react/styles.css";
 import "../src/App.css";
 
+import CommunityPlusDashboard from "./CommunityPlusDashboard";
+
 function App({ signOut, user }) {
   return (
-   <BrowserRouter>
-      <Routes>
-        <Route path="/"
-          element={<CommunityPlusLandingPage user={user} signOut={signOut} />}
-        />
-
-        <Route path="/posts"
-        
-          element={<CommunityPlusContentPage user={user} signOut={signOut} />}
-        />
-
-        {/* OAuth Callback & Landing page after login */}
-        <Route
-        path="/main"
-        element={
-          <Authenticator>
-            {({ signOut, user }) => (
-              <CommunityPlusNewsContribution user={user} signOut={signOut} />
-            )}
-          </Authenticator>
-        }
-      />
- 
-      </Routes>
-</BrowserRouter>
+    <CommunityPlusDashboard user={user} signOut={signOut} />
   );
 }
 
-export default App;
-
+export default withAuthenticator(App);
+              
