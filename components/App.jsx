@@ -15,7 +15,7 @@ function App({ signOut, user }) {
           element={<CommunityPlusLandingPage user={user} signOut={signOut} />}
         />
 
-        <Route path="/Posts"
+        <Route path="/posts"
           element={<CommunityPlusContentpage user={user} signOut={signOut} />}
         />
 
