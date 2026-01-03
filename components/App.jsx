@@ -2,12 +2,9 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { withAuthenticator, Authenticator } from "@aws-amplify/ui-react";
 import CommunityPlusNewsContribution from "./CommunityPlusNewsContribution";
 import CommunityPlusLandingPage from "./CommunityPlusLandingPage";
-import CommunityPlusContentpage from ".src/CommunityPlusContentpage";
+import CommunityPlusContentpage from "./CommunityplusContentpage"
 import "@aws-amplify/ui-react/styles.css";
 import "../src/App.css";
-
-
-
 
 function App({ signOut, user }) {
   return (
