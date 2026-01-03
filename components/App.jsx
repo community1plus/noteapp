@@ -5,7 +5,6 @@ import CommunityPlusLandingPage from "./CommunityPlusLandingPage";
 import CommunityPlusContentpage from "./CommunityPlusLandingPage";
 import "@aws-amplify/ui-react/styles.css";
 import "../src/App.css";
-import { Link } from "react-router-dom";
 
 
 

@@ -2,7 +2,7 @@
 import React from "react";
 import ".src/Communityplusposts.css";
 
-export default function CommunityplusPostpage() {
+export default function CommunityplusContentpage() {
   return (
     <div className="posts-page">
       <div className="posts-grid">
