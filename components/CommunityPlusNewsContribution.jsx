@@ -53,7 +53,7 @@ function CommunityPlusNewsContribution({ user, signOut }) {
         {/* BOTTOM ROW: Navigation */}
         <nav className="links">
           <a href="/">Home</a>
-          <a href="/Posts">News</a>
+          <a href="/posts">Posts</a>
           <a href="/events">Events</a>
           <a href="/incidents">Incidents</a>
           <a href="/search">Search</a>
