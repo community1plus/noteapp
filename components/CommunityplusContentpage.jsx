@@ -1,4 +1,4 @@
-// CommunityplusContentPage.jsx
+// CommunityPlusContentPage.jsx
 import React from "react";
 import "../src/CommunityPlusContentPage.css"
 
