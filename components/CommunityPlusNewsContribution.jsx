@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import CommunityPlusDashboard from "./CommunityPlusDashboard";
-import "../src/CommunityPlusNewsContribution.css";
 import GoogleStyleSearch from "./GoogleStyleSearch";
+
+import "../src/CommunityPlusNewsContribution.css";
 
 function CommunityPlusNewsContribution({ user, signOut }) {
   const [location, setLocation] = useState("Fetching location...");
@@ -32,15 +35,12 @@ function CommunityPlusNewsContribution({ user, signOut }) {
   return (
     <>
       <header className="header">
-
         {/* TOP ROW */}
         <div className="header-top">
-
           {/* Left: Avatar + Search */}
           <div className="logo-container">
             <div className="avatar">C</div>
 
-            {/* Search fills available space */}
             <div className="search-wrapper">
               <GoogleStyleSearch />
             </div>
@@ -52,15 +52,14 @@ function CommunityPlusNewsContribution({ user, signOut }) {
 
         {/* BOTTOM ROW: Navigation */}
         <nav className="links">
-          <a href="/">Home</a>
-          <a href="/posts">Posts</a>
-          <a href="/events">Events</a>
-          <a href="/incidents">Incidents</a>
-          <a href="/search">Search</a>
-          <a href="/community">Community+</a>
-          <a href="/about">About</a>
+          <Link to="/">Home</Link>
+          <Link to="/posts">Posts</Link>
+          <Link to="/events">Events</Link>
+          <Link to="/incidents">Incidents</Link>
+          <Link to="/search">Search</Link>
+          <Link to="/community">Community+</Link>
+          <Link to="/about">About</Link>
         </nav>
-
       </header>
 
       <CommunityPlusDashboard />
