@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { withAuthenticator, Authenticator } from "@aws-amplify/ui-react";
+import CommunityPlusContentPage from "./CommunityPlusContentPage";
 import CommunityPlusNewsContribution from "./CommunityPlusNewsContribution";
 import CommunityPlusLandingPage from "./CommunityPlusLandingPage";
-import CommunityPlusContentPage from "./CommunityPlusContentPage";
 import "@aws-amplify/ui-react/styles.css";
 import "../src/App.css";
 
