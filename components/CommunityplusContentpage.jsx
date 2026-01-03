@@ -1,9 +1,9 @@
 // CommunityplusContentpage.jsx
 import React from "react";
-import "../src/CommunityPlusContentpage.css"
+import "../src/CommunityPlusContentPage.css"
 
 
-export default function CommunityplusContentpage() {
+export default function CommunityplusContentPage() {
   return (
     <div className="posts-page">
       <div className="posts-grid">
