@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { withAuthenticator, Authenticator } from "@aws-amplify/ui-react";
 import CommunityPlusNewsContribution from "./CommunityPlusNewsContribution";
 import CommunityPlusLandingPage from "./CommunityPlusLandingPage";
+import CommunityPlusContentpage from "./CommunityPlusLandingPage";
 import "@aws-amplify/ui-react/styles.css";
 import "../src/App.css";
 
@@ -12,6 +13,10 @@ function App({ signOut, user }) {
       <Routes>
         <Route path="/"
           element={<CommunityPlusLandingPage user={user} signOut={signOut} />}
+        />
+
+        <Route path="/Posts"
+          element={<CommunityPlusContentpage user={user} signOut={signOut} />}
         />
 
         {/* OAuth Callback & Landing page after login */}
