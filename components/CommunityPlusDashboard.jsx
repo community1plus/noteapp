@@ -1,14 +1,17 @@
-import React, { useState, useEffect, useRef } from "react";
-import { GoogleMap, LoadScript, Marker, StandaloneSearchBox } from "@react-google-maps/api";
+import React, { useState, useEffect } from "react";
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import "../src/CommunityPlusDashboard.css";
 import CommunityPlusFetchfbPosts from "./CommunityPlusFetchfbPosts";
 import CommunityPlusSideBar from "./CommunityPlusSideBar";
+import CommunityPlusHeader from "./CommunityPlusHeader"; // your nav header
 
 function CommunityPlusDashboard() {
-  const [coords, setCoords] = useState({ lat: -37.8136, lng: 144.9631 }); // default Melbourne
+  const [coords, setCoords] = useState({ lat: -37.8136, lng: 144.9631 });
   const [location, setLocation] = useState("Detecting location...");
+  
+  // NEW: state to control main content
+  const [activeContent, setActiveContent] = useState("posts"); // default
 
-  // Try geolocation + IP fallback
   useEffect(() => {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
@@ -24,42 +27,38 @@ function CommunityPlusDashboard() {
               if (data.latitude && data.longitude) {
                 setCoords({ lat: data.latitude, lng: data.longitude });
                 setLocation(`${data.city}, ${data.region}`);
-                console.log("IP-based location:", data);
-              } else {
-                setLocation("Location unavailable");
-              }
+              } else setLocation("Location unavailable");
             });
         }
       );
     }
   }, []);
 
-  
-
   return (
     <main className="main">
-      <div><CommunityPlusSideBar /></div>
-      <div className="map-column">
-        <LoadScript
-          googleMapsApiKey="AIzaSyCPG5QI1XTpFjgcTaDoY_rN5qxR3susJrc"
-          libraries={["places"]}
-        >
-          
-          <GoogleMap
+      {/* Header nav */}
+      <CommunityPlusHeader setActiveContent={setActiveContent} />
+
+      {/* Sidebar */}
+      <CommunityPlusSideBar setActiveContent={setActiveContent} />
+
+      {/* Main content */}
+      <div className="feed-column">
+        {activeContent === "posts" && <CommunityPlusFetchfbPosts />}
+        {activeContent === "map" && (
+          <LoadScript googleMapsApiKey="YOUR_KEY" libraries={["places"]}>
+            <GoogleMap
               center={coords}
               zoom={14}
               mapContainerClassName="map-container"
             >
               <Marker position={coords} />
-           </GoogleMap>        
-        </LoadScript>
+            </GoogleMap>
+          </LoadScript>
+        )}
+        {activeContent === "other" && <div>Other content here</div>}
       </div>
-
-      {/* Right column: Feed */}
-      <div className="feed-column">
-         <CommunityPlusFetchfbPosts />
-      </div>
-   </main> 
+    </main>
   );
 }
 
