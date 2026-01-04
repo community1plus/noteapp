@@ -5,16 +5,30 @@ body {
   background: #e6f2ff; /* light blue test colour */
 }
 
-/* Page wrapper */
-.page {
+/* App layout: sidebar + content */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar (assumed existing) */
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  min-width: 0; /* CRITICAL for CSS Grid inside flex */
   padding: 24px;
 }
 
 /* Grid layout — FIXED */
 .posts-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
   width: 100%;
   align-items: start;
 }
@@ -22,8 +36,8 @@ body {
 /* Post card (portrait) */
 .post-card {
   background: #ffffff;
-  border-radius: 10px;
-  min-height: 320px;           /* allow flexible height */
+  border-radius: 12px;
+  min-height: 340px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   display: flex;
   align-items: center;
