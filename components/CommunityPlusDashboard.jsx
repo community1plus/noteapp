@@ -41,7 +41,8 @@ function CommunityPlusDashboard({ user, signOut }) {
         signOut={signOut}
         setActiveView={setActiveView}
       />
-
+      {console.log("Active view:", activeView)}
+      
       {/* BODY */}
       <main className="main">
         {/* SIDEBAR */}
@@ -67,8 +68,8 @@ function CommunityPlusDashboard({ user, signOut }) {
           )}
 
           {activeView === "posts" && (
-             <CommunityPlusContentPage />
-      )}
+            <CommunityPlusContentPage />
+          )}
 
           {/* Add more views later */}
           {/* {activeView === "events" && <Events />} */}
