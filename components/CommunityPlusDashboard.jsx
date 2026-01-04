@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import CommunityPlusContentPage from "./CommunityplusContentpage";
+import CommunityPlusContentPage from "./CommunityPlusContentPage";
 import CommunityPlusHeader from "./CommunityPlusHeader";
 import CommunityPlusSideBar from "./CommunityPlusSideBar";
 import CommunityPlusFetchfbPosts from "./CommunityPlusFetchfbPosts";
