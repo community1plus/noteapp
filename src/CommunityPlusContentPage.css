@@ -10,18 +10,20 @@ body {
   padding: 24px;
 }
 
-/* Grid layout */
+/* Grid layout — FIXED */
 .posts-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 per row */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 16px;
+  width: 100%;
+  align-items: start;
 }
 
 /* Post card (portrait) */
 .post-card {
   background: #ffffff;
   border-radius: 10px;
-  height: 320px;              /* portrait orientation */
+  min-height: 320px;           /* allow flexible height */
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   display: flex;
   align-items: center;
