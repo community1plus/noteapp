@@ -66,7 +66,9 @@ function CommunityPlusDashboard({ user, signOut }) {
             </div>
           )}
 
-          {activeView === "posts" && <CommunityPlusFetchfbPosts />}
+          {activeView === "posts" && (
+             <CommunityPlusContentPage />
+      )}
 
           {/* Add more views later */}
           {/* {activeView === "events" && <Events />} */}
